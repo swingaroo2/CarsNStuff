@@ -8,13 +8,27 @@
 
 /* Begin PBXBuildFile section */
 		92A8EB7122ECEE62000EC835 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A8EB7022ECEE62000EC835 /* AppDelegate.swift */; };
-		92A8EB7322ECEE62000EC835 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A8EB7222ECEE62000EC835 /* ViewController.swift */; };
+		92A8EB7322ECEE62000EC835 /* InitialButtonVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A8EB7222ECEE62000EC835 /* InitialButtonVC.swift */; };
 		92A8EB7622ECEE62000EC835 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 92A8EB7422ECEE62000EC835 /* Main.storyboard */; };
 		92A8EB7922ECEE62000EC835 /* CarsNStuff.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 92A8EB7722ECEE62000EC835 /* CarsNStuff.xcdatamodeld */; };
 		92A8EB7B22ECEE62000EC835 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 92A8EB7A22ECEE62000EC835 /* Assets.xcassets */; };
 		92A8EB7E22ECEE62000EC835 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 92A8EB7C22ECEE62000EC835 /* LaunchScreen.storyboard */; };
 		92A8EB8922ECEE63000EC835 /* CarsNStuffTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A8EB8822ECEE63000EC835 /* CarsNStuffTests.swift */; };
 		92A8EB9422ECEE63000EC835 /* CarsNStuffUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A8EB9322ECEE63000EC835 /* CarsNStuffUITests.swift */; };
+		92A8EBA322ECEE8B000EC835 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A8EBA222ECEE8B000EC835 /* Coordinator.swift */; };
+		92A8EBA422ECEE8B000EC835 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A8EBA222ECEE8B000EC835 /* Coordinator.swift */; };
+		92A8EBA522ECEE8B000EC835 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A8EBA222ECEE8B000EC835 /* Coordinator.swift */; };
+		92A8EBA722ECEE94000EC835 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A8EBA622ECEE94000EC835 /* MainCoordinator.swift */; };
+		92A8EBA822ECEE94000EC835 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A8EBA622ECEE94000EC835 /* MainCoordinator.swift */; };
+		92A8EBA922ECEE94000EC835 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A8EBA622ECEE94000EC835 /* MainCoordinator.swift */; };
+		92A8EBAC22ECF036000EC835 /* Storyboarded.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A8EBAB22ECF036000EC835 /* Storyboarded.swift */; };
+		92A8EBAD22ECF036000EC835 /* Storyboarded.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A8EBAB22ECF036000EC835 /* Storyboarded.swift */; };
+		92A8EBAE22ECF036000EC835 /* Storyboarded.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A8EBAB22ECF036000EC835 /* Storyboarded.swift */; };
+		92A8EBAF22ECF091000EC835 /* InitialButtonVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A8EB7222ECEE62000EC835 /* InitialButtonVC.swift */; };
+		92A8EBB022ECF092000EC835 /* InitialButtonVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A8EB7222ECEE62000EC835 /* InitialButtonVC.swift */; };
+		92A8EBB222ECF0E1000EC835 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A8EBB122ECF0E1000EC835 /* Constants.swift */; };
+		92A8EBB322ECF0E1000EC835 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A8EBB122ECF0E1000EC835 /* Constants.swift */; };
+		92A8EBB422ECF0E1000EC835 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A8EBB122ECF0E1000EC835 /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,7 +51,7 @@
 /* Begin PBXFileReference section */
 		92A8EB6D22ECEE62000EC835 /* CarsNStuff.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CarsNStuff.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		92A8EB7022ECEE62000EC835 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		92A8EB7222ECEE62000EC835 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		92A8EB7222ECEE62000EC835 /* InitialButtonVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialButtonVC.swift; sourceTree = "<group>"; };
 		92A8EB7522ECEE62000EC835 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		92A8EB7822ECEE62000EC835 /* CarsNStuff.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CarsNStuff.xcdatamodel; sourceTree = "<group>"; };
 		92A8EB7A22ECEE62000EC835 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -49,6 +63,10 @@
 		92A8EB8F22ECEE63000EC835 /* CarsNStuffUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CarsNStuffUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		92A8EB9322ECEE63000EC835 /* CarsNStuffUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarsNStuffUITests.swift; sourceTree = "<group>"; };
 		92A8EB9522ECEE63000EC835 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		92A8EBA222ECEE8B000EC835 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		92A8EBA622ECEE94000EC835 /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
+		92A8EBAB22ECF036000EC835 /* Storyboarded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboarded.swift; sourceTree = "<group>"; };
+		92A8EBB122ECF0E1000EC835 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,13 +117,14 @@
 		92A8EB6F22ECEE62000EC835 /* CarsNStuff */ = {
 			isa = PBXGroup;
 			children = (
-				92A8EB7022ECEE62000EC835 /* AppDelegate.swift */,
-				92A8EB7222ECEE62000EC835 /* ViewController.swift */,
-				92A8EB7422ECEE62000EC835 /* Main.storyboard */,
-				92A8EB7A22ECEE62000EC835 /* Assets.xcassets */,
-				92A8EB7C22ECEE62000EC835 /* LaunchScreen.storyboard */,
 				92A8EB7F22ECEE62000EC835 /* Info.plist */,
+				92A8EB7022ECEE62000EC835 /* AppDelegate.swift */,
+				92A8EBB122ECF0E1000EC835 /* Constants.swift */,
+				92A8EB7A22ECEE62000EC835 /* Assets.xcassets */,
 				92A8EB7722ECEE62000EC835 /* CarsNStuff.xcdatamodeld */,
+				92A8EBA122ECEE78000EC835 /* Coordinators */,
+				92A8EBB522ECF415000EC835 /* Storyboards */,
+				92A8EBAA22ECF01B000EC835 /* ViewControllers */,
 			);
 			path = CarsNStuff;
 			sourceTree = "<group>";
@@ -126,6 +145,33 @@
 				92A8EB9522ECEE63000EC835 /* Info.plist */,
 			);
 			path = CarsNStuffUITests;
+			sourceTree = "<group>";
+		};
+		92A8EBA122ECEE78000EC835 /* Coordinators */ = {
+			isa = PBXGroup;
+			children = (
+				92A8EBA222ECEE8B000EC835 /* Coordinator.swift */,
+				92A8EBA622ECEE94000EC835 /* MainCoordinator.swift */,
+			);
+			path = Coordinators;
+			sourceTree = "<group>";
+		};
+		92A8EBAA22ECF01B000EC835 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				92A8EB7222ECEE62000EC835 /* InitialButtonVC.swift */,
+				92A8EBAB22ECF036000EC835 /* Storyboarded.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		92A8EBB522ECF415000EC835 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				92A8EB7C22ECEE62000EC835 /* LaunchScreen.storyboard */,
+				92A8EB7422ECEE62000EC835 /* Main.storyboard */,
+			);
+			path = Storyboards;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -259,9 +305,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				92A8EB7322ECEE62000EC835 /* ViewController.swift in Sources */,
+				92A8EBA322ECEE8B000EC835 /* Coordinator.swift in Sources */,
+				92A8EB7322ECEE62000EC835 /* InitialButtonVC.swift in Sources */,
 				92A8EB7922ECEE62000EC835 /* CarsNStuff.xcdatamodeld in Sources */,
+				92A8EBA722ECEE94000EC835 /* MainCoordinator.swift in Sources */,
+				92A8EBB222ECF0E1000EC835 /* Constants.swift in Sources */,
 				92A8EB7122ECEE62000EC835 /* AppDelegate.swift in Sources */,
+				92A8EBAC22ECF036000EC835 /* Storyboarded.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -269,7 +319,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				92A8EBAF22ECF091000EC835 /* InitialButtonVC.swift in Sources */,
+				92A8EBA422ECEE8B000EC835 /* Coordinator.swift in Sources */,
+				92A8EBA822ECEE94000EC835 /* MainCoordinator.swift in Sources */,
 				92A8EB8922ECEE63000EC835 /* CarsNStuffTests.swift in Sources */,
+				92A8EBAD22ECF036000EC835 /* Storyboarded.swift in Sources */,
+				92A8EBB322ECF0E1000EC835 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -277,7 +332,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				92A8EBB022ECF092000EC835 /* InitialButtonVC.swift in Sources */,
+				92A8EBA522ECEE8B000EC835 /* Coordinator.swift in Sources */,
+				92A8EBA922ECEE94000EC835 /* MainCoordinator.swift in Sources */,
 				92A8EB9422ECEE63000EC835 /* CarsNStuffUITests.swift in Sources */,
+				92A8EBAE22ECF036000EC835 /* Storyboarded.swift in Sources */,
+				92A8EBB422ECF0E1000EC835 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
