@@ -9,5 +9,14 @@
 import Foundation
 
 struct ModelConstants {
-    static let dataModel = "CarsNStuff"
+    static let modelName = "CarsNStuff"
+}
+
+struct CellIdentifiers {
+    static let generic = "Cell"
+    static let dealership = "DealershipCell"
+}
+
+struct HttpConstants {
+    static let basePath = "https://api.coxauto-interview.com"
 }

@@ -10,12 +10,21 @@ import UIKit
 
 class InitialButtonVC: UIViewController {
     
+    // MARK: - Properties
     weak var coordinator: MainCoordinator?
-    
-    @IBAction func fetchButtonTapped() {
-        coordinator?.showDealerships()
-    }
-    
+    var coreDataManager: CoreDataManager!
 }
 
+// MARK: - IBActions
+extension InitialButtonVC {
+    @IBAction func fetchButtonTapped() {
+        let datasetHttpService = DatasetHttpService()
+        datasetHttpService.fetchDataset()
+        
+        // TODO: call this in a completion handler. For added awesome points, integrate a progress bar and update the button text as dealership and vehicle data are fetched
+//        coordinator?.showDealerships()
+    }
+}
+
+// MARK: - Storyboarded
 extension InitialButtonVC: Storyboarded {}

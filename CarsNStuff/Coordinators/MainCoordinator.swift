@@ -11,14 +11,17 @@ import UIKit
 
 class MainCoordinator: Coordinator {
     var navigationController: UINavigationController
+    var coreDataManager: CoreDataManager
     
-    init(navigationController: UINavigationController) {
+    init(navigationController: UINavigationController, coreDataManager: CoreDataManager) {
         self.navigationController = navigationController
+        self.coreDataManager = coreDataManager
     }
     
     func start() {
         let initialButtonVC = InitialButtonVC.instantiate()
         initialButtonVC.coordinator = self
+        initialButtonVC.coreDataManager = coreDataManager
         navigationController.pushViewController(initialButtonVC, animated: false)
     }
 }
@@ -27,6 +30,10 @@ class MainCoordinator: Coordinator {
 extension MainCoordinator {
     func showDealerships() {
         print(#function)
+        let dealershipVC = DealershipVC.instantiate()
+        dealershipVC.coordinator = self
+        dealershipVC.tableManager = DealershipTableManager(coreDataManager: coreDataManager)
+        navigationController.pushViewController(dealershipVC, animated: true)
     }
     
     // TODO: Pass a ManagedObject, or relevant property
