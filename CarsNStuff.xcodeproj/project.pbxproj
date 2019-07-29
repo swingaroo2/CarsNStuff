@@ -47,6 +47,24 @@
 		92FE23CC22ED16F4008728C5 /* Dataset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FE23CB22ED16F4008728C5 /* Dataset.swift */; };
 		92FE23CD22ED16F4008728C5 /* Dataset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FE23CB22ED16F4008728C5 /* Dataset.swift */; };
 		92FE23CE22ED16F4008728C5 /* Dataset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FE23CB22ED16F4008728C5 /* Dataset.swift */; };
+		92FE23D022ED20C1008728C5 /* DealershipHttpService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FE23CF22ED20C1008728C5 /* DealershipHttpService.swift */; };
+		92FE23D122ED20C1008728C5 /* DealershipHttpService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FE23CF22ED20C1008728C5 /* DealershipHttpService.swift */; };
+		92FE23D222ED20C1008728C5 /* DealershipHttpService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FE23CF22ED20C1008728C5 /* DealershipHttpService.swift */; };
+		92FE23D422ED216E008728C5 /* VehiclesHttpService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FE23D322ED216E008728C5 /* VehiclesHttpService.swift */; };
+		92FE23D522ED216E008728C5 /* VehiclesHttpService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FE23D322ED216E008728C5 /* VehiclesHttpService.swift */; };
+		92FE23D622ED216E008728C5 /* VehiclesHttpService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FE23D322ED216E008728C5 /* VehiclesHttpService.swift */; };
+		92FE23D822EE2EC2008728C5 /* VehicleIDs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FE23D722EE2EC2008728C5 /* VehicleIDs.swift */; };
+		92FE23D922EE2EC2008728C5 /* VehicleIDs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FE23D722EE2EC2008728C5 /* VehicleIDs.swift */; };
+		92FE23DA22EE2EC2008728C5 /* VehicleIDs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FE23D722EE2EC2008728C5 /* VehicleIDs.swift */; };
+		92FE23DE22EE39B7008728C5 /* DatasetOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FE23DD22EE39B7008728C5 /* DatasetOperation.swift */; };
+		92FE23DF22EE39B7008728C5 /* DatasetOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FE23DD22EE39B7008728C5 /* DatasetOperation.swift */; };
+		92FE23E022EE39B7008728C5 /* DatasetOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FE23DD22EE39B7008728C5 /* DatasetOperation.swift */; };
+		92FE23E222EE5BA4008728C5 /* HttpService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FE23E122EE5BA4008728C5 /* HttpService.swift */; };
+		92FE23E322EE5BA4008728C5 /* HttpService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FE23E122EE5BA4008728C5 /* HttpService.swift */; };
+		92FE23E422EE5BA4008728C5 /* HttpService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FE23E122EE5BA4008728C5 /* HttpService.swift */; };
+		92FE23E622EE63B4008728C5 /* VehicleIDsOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FE23E522EE63B4008728C5 /* VehicleIDsOperation.swift */; };
+		92FE23E722EE63B4008728C5 /* VehicleIDsOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FE23E522EE63B4008728C5 /* VehicleIDsOperation.swift */; };
+		92FE23E822EE63B4008728C5 /* VehicleIDsOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FE23E522EE63B4008728C5 /* VehicleIDsOperation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -88,9 +106,15 @@
 		92A8EBB622ECF6C4000EC835 /* DealershipVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DealershipVC.swift; sourceTree = "<group>"; };
 		92A8EBC122ECFC23000EC835 /* DealershipTableManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DealershipTableManager.swift; sourceTree = "<group>"; };
 		92A8EBC622ED02F0000EC835 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
-		92A8EBCF22ED0EF8000EC835 /* DatasetHttpService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatasetHttpService.swift; sourceTree = "<group>"; };
+		92A8EBCF22ED0EF8000EC835 /* DatasetHttpService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatasetHttpService.swift; sourceTree = "<group>"; wrapsLines = 0; };
 		92A8EBD322ED0F87000EC835 /* URLBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLBuilder.swift; sourceTree = "<group>"; };
 		92FE23CB22ED16F4008728C5 /* Dataset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dataset.swift; sourceTree = "<group>"; };
+		92FE23CF22ED20C1008728C5 /* DealershipHttpService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DealershipHttpService.swift; sourceTree = "<group>"; };
+		92FE23D322ED216E008728C5 /* VehiclesHttpService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehiclesHttpService.swift; sourceTree = "<group>"; wrapsLines = 0; };
+		92FE23D722EE2EC2008728C5 /* VehicleIDs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleIDs.swift; sourceTree = "<group>"; };
+		92FE23DD22EE39B7008728C5 /* DatasetOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatasetOperation.swift; sourceTree = "<group>"; };
+		92FE23E122EE5BA4008728C5 /* HttpService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpService.swift; sourceTree = "<group>"; };
+		92FE23E522EE63B4008728C5 /* VehicleIDsOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleIDsOperation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -207,6 +231,7 @@
 				92A8EB7722ECEE62000EC835 /* CarsNStuff.xcdatamodeld */,
 				92A8EBC622ED02F0000EC835 /* CoreDataManager.swift */,
 				92FE23CB22ED16F4008728C5 /* Dataset.swift */,
+				92FE23D722EE2EC2008728C5 /* VehicleIDs.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -214,10 +239,31 @@
 		92A8EBCE22ED0DB5000EC835 /* Service */ = {
 			isa = PBXGroup;
 			children = (
-				92A8EBCF22ED0EF8000EC835 /* DatasetHttpService.swift */,
 				92A8EBD322ED0F87000EC835 /* URLBuilder.swift */,
+				92FE23DB22EE3987008728C5 /* Http Classes */,
+				92FE23DC22EE399E008728C5 /* Operations */,
 			);
 			path = Service;
+			sourceTree = "<group>";
+		};
+		92FE23DB22EE3987008728C5 /* Http Classes */ = {
+			isa = PBXGroup;
+			children = (
+				92FE23E122EE5BA4008728C5 /* HttpService.swift */,
+				92A8EBCF22ED0EF8000EC835 /* DatasetHttpService.swift */,
+				92FE23CF22ED20C1008728C5 /* DealershipHttpService.swift */,
+				92FE23D322ED216E008728C5 /* VehiclesHttpService.swift */,
+			);
+			path = "Http Classes";
+			sourceTree = "<group>";
+		};
+		92FE23DC22EE399E008728C5 /* Operations */ = {
+			isa = PBXGroup;
+			children = (
+				92FE23DD22EE39B7008728C5 /* DatasetOperation.swift */,
+				92FE23E522EE63B4008728C5 /* VehicleIDsOperation.swift */,
+			);
+			path = Operations;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -353,17 +399,23 @@
 			files = (
 				92A8EBC222ECFC23000EC835 /* DealershipTableManager.swift in Sources */,
 				92A8EBA322ECEE8B000EC835 /* Coordinator.swift in Sources */,
+				92FE23D422ED216E008728C5 /* VehiclesHttpService.swift in Sources */,
 				92A8EB7322ECEE62000EC835 /* InitialButtonVC.swift in Sources */,
 				92A8EB7922ECEE62000EC835 /* CarsNStuff.xcdatamodeld in Sources */,
+				92FE23D022ED20C1008728C5 /* DealershipHttpService.swift in Sources */,
+				92FE23E622EE63B4008728C5 /* VehicleIDsOperation.swift in Sources */,
 				92A8EBA722ECEE94000EC835 /* MainCoordinator.swift in Sources */,
 				92A8EBD422ED0F87000EC835 /* URLBuilder.swift in Sources */,
 				92FE23CC22ED16F4008728C5 /* Dataset.swift in Sources */,
+				92FE23DE22EE39B7008728C5 /* DatasetOperation.swift in Sources */,
 				92A8EBD022ED0EF8000EC835 /* DatasetHttpService.swift in Sources */,
 				92A8EBB222ECF0E1000EC835 /* Constants.swift in Sources */,
 				92A8EB7122ECEE62000EC835 /* AppDelegate.swift in Sources */,
+				92FE23D822EE2EC2008728C5 /* VehicleIDs.swift in Sources */,
 				92A8EBAC22ECF036000EC835 /* Storyboarded.swift in Sources */,
 				92A8EBC722ED02F0000EC835 /* CoreDataManager.swift in Sources */,
 				92A8EBB722ECF6C4000EC835 /* DealershipVC.swift in Sources */,
+				92FE23E222EE5BA4008728C5 /* HttpService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -374,14 +426,20 @@
 				92A8EBAF22ECF091000EC835 /* InitialButtonVC.swift in Sources */,
 				92A8EBC322ECFC23000EC835 /* DealershipTableManager.swift in Sources */,
 				92A8EBA422ECEE8B000EC835 /* Coordinator.swift in Sources */,
+				92FE23D122ED20C1008728C5 /* DealershipHttpService.swift in Sources */,
+				92FE23E322EE5BA4008728C5 /* HttpService.swift in Sources */,
 				92A8EBD522ED0F87000EC835 /* URLBuilder.swift in Sources */,
+				92FE23E722EE63B4008728C5 /* VehicleIDsOperation.swift in Sources */,
 				92A8EBA822ECEE94000EC835 /* MainCoordinator.swift in Sources */,
 				92A8EBD122ED0EF8000EC835 /* DatasetHttpService.swift in Sources */,
 				92FE23CD22ED16F4008728C5 /* Dataset.swift in Sources */,
+				92FE23DF22EE39B7008728C5 /* DatasetOperation.swift in Sources */,
+				92FE23D922EE2EC2008728C5 /* VehicleIDs.swift in Sources */,
 				92A8EB8922ECEE63000EC835 /* CarsNStuffTests.swift in Sources */,
 				92A8EBAD22ECF036000EC835 /* Storyboarded.swift in Sources */,
 				92A8EBC822ED02F0000EC835 /* CoreDataManager.swift in Sources */,
 				92A8EBB322ECF0E1000EC835 /* Constants.swift in Sources */,
+				92FE23D522ED216E008728C5 /* VehiclesHttpService.swift in Sources */,
 				92A8EBB822ECF6C4000EC835 /* DealershipVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -393,14 +451,20 @@
 				92A8EBB022ECF092000EC835 /* InitialButtonVC.swift in Sources */,
 				92A8EBC422ECFC23000EC835 /* DealershipTableManager.swift in Sources */,
 				92A8EBA522ECEE8B000EC835 /* Coordinator.swift in Sources */,
+				92FE23D222ED20C1008728C5 /* DealershipHttpService.swift in Sources */,
+				92FE23E422EE5BA4008728C5 /* HttpService.swift in Sources */,
 				92A8EBD622ED0F87000EC835 /* URLBuilder.swift in Sources */,
+				92FE23E822EE63B4008728C5 /* VehicleIDsOperation.swift in Sources */,
 				92A8EBA922ECEE94000EC835 /* MainCoordinator.swift in Sources */,
 				92A8EBD222ED0EF8000EC835 /* DatasetHttpService.swift in Sources */,
 				92FE23CE22ED16F4008728C5 /* Dataset.swift in Sources */,
+				92FE23E022EE39B7008728C5 /* DatasetOperation.swift in Sources */,
+				92FE23DA22EE2EC2008728C5 /* VehicleIDs.swift in Sources */,
 				92A8EB9422ECEE63000EC835 /* CarsNStuffUITests.swift in Sources */,
 				92A8EBAE22ECF036000EC835 /* Storyboarded.swift in Sources */,
 				92A8EBC922ED02F0000EC835 /* CoreDataManager.swift in Sources */,
 				92A8EBB422ECF0E1000EC835 /* Constants.swift in Sources */,
+				92FE23D622ED216E008728C5 /* VehiclesHttpService.swift in Sources */,
 				92A8EBB922ECF6C4000EC835 /* DealershipVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

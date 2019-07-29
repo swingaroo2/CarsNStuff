@@ -37,7 +37,7 @@ extension MainCoordinator {
     }
     
     // TODO: Pass a ManagedObject, or relevant property
-    func showVehiclesForDealership() {
+    func showVehicleIDsForDealership() {
         print(#function)
     }
 }

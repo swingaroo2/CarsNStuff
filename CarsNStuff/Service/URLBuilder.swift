@@ -8,10 +8,6 @@
 
 import Foundation
 
-struct PathComponents {
-    static let dataSetId = "/api/datasetId"
-}
-
 class URLBuilder {
     var baseURL: URL?
     
@@ -26,7 +22,14 @@ class URLBuilder {
 
 extension URLBuilder {
     func getDatasetIdURL() -> URL? {
-        let newURL = baseURL?.appendingPathComponent(PathComponents.dataSetId)
+        let path = "/api/datasetId"
+        let newURL = baseURL?.appendingPathComponent(path)
+        return newURL
+    }
+    
+    func getVehicleIDsURL(_ dataset: Dataset) -> URL? {
+        let path = String(format: "/api/%@/vehicles", dataset.datasetId)
+        let newURL = baseURL?.appendingPathComponent(path)
         return newURL
     }
 }

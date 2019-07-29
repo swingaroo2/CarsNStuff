@@ -18,8 +18,8 @@ class InitialButtonVC: UIViewController {
 // MARK: - IBActions
 extension InitialButtonVC {
     @IBAction func fetchButtonTapped() {
-        let datasetHttpService = DatasetHttpService()
-        datasetHttpService.fetchDataset()
+        let appHttpService = HttpService()
+        appHttpService.fetch()
         
         // TODO: call this in a completion handler. For added awesome points, integrate a progress bar and update the button text as dealership and vehicle data are fetched
 //        coordinator?.showDealerships()
