@@ -9,9 +9,9 @@
 import Foundation
 
 struct VehicleInfo: Codable {
-    var vehicleId: Int
-    var year: Int
+    var vehicleId: Int64
+    var year: Int64
     var make: String
     var model: String
-    var dealerId: Int
+    var dealerId: Int64
 }

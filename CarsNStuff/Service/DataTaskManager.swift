@@ -11,6 +11,11 @@ import Foundation
 class DataTaskManager {
     
     private var datasetID: String?
+    private let coreDataManager: CoreDataManager
+    
+    init(with coreDataManager: CoreDataManager) {
+        self.coreDataManager = coreDataManager
+    }
     
     func fetch() {
         let queue = OperationQueue()
@@ -22,7 +27,7 @@ class DataTaskManager {
                 let vehicleInfoOperation = VehicleInfoOperation(urlSession) { vehicles in
                     print("VehicleInfoOperation completion block")
                 }
-                
+                vehicleInfoOperation.coreDataManager = self.coreDataManager
                 vehicleInfoOperation.datasetID = self.datasetID
                 vehicleInfoOperation.vehicleID = vehicleID
                 queue.addOperation(vehicleInfoOperation)

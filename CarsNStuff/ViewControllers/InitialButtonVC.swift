@@ -18,11 +18,11 @@ class InitialButtonVC: UIViewController {
 // MARK: - IBActions
 extension InitialButtonVC {
     @IBAction func fetchButtonTapped() {
-        let appHttpService = DataTaskManager()
+        let appHttpService = DataTaskManager(with: coreDataManager)
         appHttpService.fetch()
         
         // TODO: call this in a completion handler.
-//        coordinator?.showDealerships()
+        //        coordinator?.showDealerships()
     }
 }
 

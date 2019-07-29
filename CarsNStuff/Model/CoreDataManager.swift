@@ -39,20 +39,37 @@ class CoreDataManager {
 // MARK: - Save
 extension CoreDataManager {
     func save () {
-        // TODO: Consider replacing viewContext with different MOC
         let context = persistentContainer.viewContext
+        executeSave(in: context)
+    }
+}
+
+// MARK: Create
+extension CoreDataManager {
+    func saveNewVehicle(from vehicleInfo: VehicleInfo) {
+        persistentContainer.performBackgroundTask { [weak self] context in
+            guard let self = self else { return }
+            let newVehicle = Vehicle(context: context)
+            newVehicle.vehicleId = vehicleInfo.vehicleId
+            newVehicle.year = vehicleInfo.year
+            newVehicle.make = vehicleInfo.make
+            newVehicle.model = vehicleInfo.model
+            newVehicle.dealerId = vehicleInfo.dealerId
+            self.executeSave(in: context)
+        }
+    }
+}
+
+private extension CoreDataManager {
+    func executeSave(in context: NSManagedObjectContext) {
         if context.hasChanges {
             do {
                 try context.save()
+                print("[CoreData] Saved!")
             } catch {
                 let nserror = error as NSError
                 fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
             }
         }
     }
-}
-
-// MARK: Create
-extension CoreDataManager {
-    
 }

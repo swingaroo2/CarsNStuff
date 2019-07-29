@@ -13,6 +13,7 @@ class VehicleInfoOperation: Operation {
     
     private let urlSession: URLSession
     private let completionHandler: VehicleInfoHandler
+    var coreDataManager: CoreDataManager!
     var vehicleInfo: VehicleInfo?
     var datasetID: String?
     var vehicleID: Int?
@@ -41,8 +42,11 @@ class VehicleInfoOperation: Operation {
             }
             
             self.vehicleInfo = JSONParser.decode(jsonData: data, into: VehicleInfo.self)
-            print(self.vehicleInfo!)
-            self.completionHandler(self.vehicleInfo)
+            
+            guard let vehicleInfo = self.vehicleInfo else { return }
+            print(vehicleInfo)
+            self.coreDataManager.saveNewVehicle(from: vehicleInfo)
+            self.completionHandler(vehicleInfo)
         }
         
         vehicleInfoTask.resume()
