@@ -38,7 +38,7 @@ class CoreDataManager {
 
 // MARK: - Save
 extension CoreDataManager {
-    func save () {
+    func save() {
         let context = persistentContainer.viewContext
         executeSave(in: context)
     }
