@@ -59,6 +59,9 @@
 		92FE23EA22EE9214008728C5 /* JSONParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FE23E922EE9214008728C5 /* JSONParser.swift */; };
 		92FE23EB22EE9214008728C5 /* JSONParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FE23E922EE9214008728C5 /* JSONParser.swift */; };
 		92FE23EC22EE9214008728C5 /* JSONParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FE23E922EE9214008728C5 /* JSONParser.swift */; };
+		92FE23EE22EE93B1008728C5 /* VehicleInfoOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FE23ED22EE93B1008728C5 /* VehicleInfoOperation.swift */; };
+		92FE23EF22EE93B1008728C5 /* VehicleInfoOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FE23ED22EE93B1008728C5 /* VehicleInfoOperation.swift */; };
+		92FE23F022EE93B1008728C5 /* VehicleInfoOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FE23ED22EE93B1008728C5 /* VehicleInfoOperation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -107,6 +110,7 @@
 		92FE23E122EE5BA4008728C5 /* HttpService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpService.swift; sourceTree = "<group>"; };
 		92FE23E522EE63B4008728C5 /* VehicleIDsOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleIDsOperation.swift; sourceTree = "<group>"; };
 		92FE23E922EE9214008728C5 /* JSONParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONParser.swift; sourceTree = "<group>"; };
+		92FE23ED22EE93B1008728C5 /* VehicleInfoOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleInfoOperation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -161,7 +165,6 @@
 				92A8EB7022ECEE62000EC835 /* AppDelegate.swift */,
 				92A8EBB122ECF0E1000EC835 /* Constants.swift */,
 				92A8EBC122ECFC23000EC835 /* DealershipTableManager.swift */,
-				92FE23E922EE9214008728C5 /* JSONParser.swift */,
 				92A8EB7A22ECEE62000EC835 /* Assets.xcassets */,
 				92A8EBA122ECEE78000EC835 /* Coordinators */,
 				92A8EBC522ED02CC000EC835 /* Model */,
@@ -232,6 +235,7 @@
 		92A8EBCE22ED0DB5000EC835 /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				92FE23E922EE9214008728C5 /* JSONParser.swift */,
 				92A8EBD322ED0F87000EC835 /* URLBuilder.swift */,
 				92FE23DB22EE3987008728C5 /* Http Classes */,
 				92FE23DC22EE399E008728C5 /* Operations */,
@@ -252,6 +256,7 @@
 			children = (
 				92FE23DD22EE39B7008728C5 /* DatasetOperation.swift */,
 				92FE23E522EE63B4008728C5 /* VehicleIDsOperation.swift */,
+				92FE23ED22EE93B1008728C5 /* VehicleInfoOperation.swift */,
 			);
 			path = Operations;
 			sourceTree = "<group>";
@@ -391,6 +396,7 @@
 				92A8EBA322ECEE8B000EC835 /* Coordinator.swift in Sources */,
 				92A8EB7322ECEE62000EC835 /* InitialButtonVC.swift in Sources */,
 				92A8EB7922ECEE62000EC835 /* CarsNStuff.xcdatamodeld in Sources */,
+				92FE23EE22EE93B1008728C5 /* VehicleInfoOperation.swift in Sources */,
 				92FE23EA22EE9214008728C5 /* JSONParser.swift in Sources */,
 				92FE23E622EE63B4008728C5 /* VehicleIDsOperation.swift in Sources */,
 				92A8EBA722ECEE94000EC835 /* MainCoordinator.swift in Sources */,
@@ -422,6 +428,7 @@
 				92FE23CD22ED16F4008728C5 /* Dataset.swift in Sources */,
 				92FE23DF22EE39B7008728C5 /* DatasetOperation.swift in Sources */,
 				92FE23D922EE2EC2008728C5 /* VehicleIDs.swift in Sources */,
+				92FE23EF22EE93B1008728C5 /* VehicleInfoOperation.swift in Sources */,
 				92A8EB8922ECEE63000EC835 /* CarsNStuffTests.swift in Sources */,
 				92A8EBAD22ECF036000EC835 /* Storyboarded.swift in Sources */,
 				92A8EBC822ED02F0000EC835 /* CoreDataManager.swift in Sources */,
@@ -445,6 +452,7 @@
 				92FE23CE22ED16F4008728C5 /* Dataset.swift in Sources */,
 				92FE23E022EE39B7008728C5 /* DatasetOperation.swift in Sources */,
 				92FE23DA22EE2EC2008728C5 /* VehicleIDs.swift in Sources */,
+				92FE23F022EE93B1008728C5 /* VehicleInfoOperation.swift in Sources */,
 				92A8EB9422ECEE63000EC835 /* CarsNStuffUITests.swift in Sources */,
 				92A8EBAE22ECF036000EC835 /* Storyboarded.swift in Sources */,
 				92A8EBC922ED02F0000EC835 /* CoreDataManager.swift in Sources */,

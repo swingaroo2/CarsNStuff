@@ -13,7 +13,6 @@ class VehicleIDsOperation: Operation {
     
     private let urlSession: URLSession
     private let completionHandler: VehicleIDsHandler
-    private var url: URL?
     private var vehicleIDs: VehicleIDs?
     var dataset: Dataset?
     
