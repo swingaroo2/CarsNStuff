@@ -36,6 +36,7 @@ class CoreDataManager {
     }
 }
 
+// MARK: - Save
 extension CoreDataManager {
     func save () {
         // TODO: Consider replacing viewContext with different MOC
@@ -49,4 +50,9 @@ extension CoreDataManager {
             }
         }
     }
+}
+
+// MARK: Create
+extension CoreDataManager {
+    
 }
