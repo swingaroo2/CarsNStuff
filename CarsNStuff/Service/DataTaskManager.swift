@@ -8,7 +8,9 @@
 
 import Foundation
 
-class HttpService {
+class DataTaskManager {
+    
+    private var datasetID: String?
     
     func fetch() {
         let queue = OperationQueue()
@@ -16,11 +18,22 @@ class HttpService {
         
         let vehicleIDsOperation = VehicleIDsOperation(urlSession) { vehicleIDs in
             print("VehicleIDs completion block")
+            vehicleIDs?.vehicleIds.forEach { vehicleID in
+                let vehicleInfoOperation = VehicleInfoOperation(urlSession) { vehicles in
+                    print("VehicleInfoOperation completion block")
+                }
+                
+                vehicleInfoOperation.datasetID = self.datasetID
+                vehicleInfoOperation.vehicleID = vehicleID
+                queue.addOperation(vehicleInfoOperation)
+            }
+            
         }
         
         let datasetOperation = DatasetOperation(urlSession) { dataset in
             print("Dataset completion block")
-            vehicleIDsOperation.dataset = dataset
+            vehicleIDsOperation.datasetID = dataset?.datasetId
+            self.datasetID = dataset?.datasetId
             queue.addOperation(vehicleIDsOperation)
         }
         

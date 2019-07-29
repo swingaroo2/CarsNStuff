@@ -14,10 +14,6 @@ class URLBuilder {
     init(basePath: String) {
         self.baseURL = URL(string: basePath)
     }
-    
-    init(baseURL: URL) {
-        self.baseURL = baseURL
-    }
 }
 
 extension URLBuilder {
@@ -27,8 +23,14 @@ extension URLBuilder {
         return newURL
     }
     
-    func getVehicleIDsURL(_ dataset: Dataset) -> URL? {
-        let path = String(format: "/api/%@/vehicles", dataset.datasetId)
+    func getVehicleIDsURL(_ datasetID: String) -> URL? {
+        let path = String(format: "/api/%@/vehicles", datasetID)
+        let newURL = baseURL?.appendingPathComponent(path)
+        return newURL
+    }
+    
+    func getVehicleInfoURL(_ datasetID: String, _ vehicleID: Int) -> URL? {
+        let path = String(format: "/api/%@/vehicles/%ld",datasetID,vehicleID)
         let newURL = baseURL?.appendingPathComponent(path)
         return newURL
     }

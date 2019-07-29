@@ -33,7 +33,7 @@ class DatasetOperation: Operation {
             return
         }
         
-        let datasetTask = urlSession.dataTask(with: url) { (data, response, error) in
+        let datasetTask = urlSession.dataTask(with: url) { data, response, error in
             if let error = error {
                 print("Error: \(error.localizedDescription)")
                 return

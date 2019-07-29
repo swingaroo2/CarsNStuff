@@ -14,7 +14,7 @@ class VehicleIDsOperation: Operation {
     private let urlSession: URLSession
     private let completionHandler: VehicleIDsHandler
     private var vehicleIDs: VehicleIDs?
-    var dataset: Dataset?
+    var datasetID: String?
     
     init(_ urlSession: URLSession, completionHandler: @escaping VehicleIDsHandler) {
         self.urlSession = urlSession
@@ -24,17 +24,16 @@ class VehicleIDsOperation: Operation {
     
     override func main() {
         if isCancelled {
-            print("\(#function): DatasetOperation is cancelled")
+            print("\(#function): VehicleIDsOperation is cancelled")
             return
         }
         
         // TODO: Graceful error handling
-        guard let dataset = dataset else { return }
-        
         let urlBuilder = URLBuilder(basePath: HttpConstants.basePath)
-        guard let url = urlBuilder.getVehicleIDsURL(dataset) else { return }
+        guard let datasetID = datasetID else { return }        
+        guard let url = urlBuilder.getVehicleIDsURL(datasetID) else { return }
         
-        let vehicleIDsTask = urlSession.dataTask(with: url) { (data, response, error) in
+        let vehicleIDsTask = urlSession.dataTask(with: url) { data, response, error in
             if let error = error {
                 print("Error: \(error.localizedDescription)")
                 return

@@ -8,6 +8,43 @@
 
 import Foundation
 
-class VehicleInfoOperation {
+class VehicleInfoOperation: Operation {
+    typealias VehicleInfoHandler = (VehicleInfo?) -> ()
     
+    private let urlSession: URLSession
+    private let completionHandler: VehicleInfoHandler
+    var vehicleInfo: VehicleInfo?
+    var datasetID: String?
+    var vehicleID: Int?
+    
+    init(_ urlSession: URLSession, completionHandler: @escaping VehicleInfoHandler) {
+        self.urlSession = urlSession
+        self.completionHandler = completionHandler
+        super.init()
+    }
+    
+    override func main() {
+        if isCancelled {
+            print("\(#function): VehicleInfoOperation is cancelled")
+            return
+        }
+        
+        // TODO: Graceful error handling
+        let urlBuilder = URLBuilder(basePath: HttpConstants.basePath)
+        guard let datasetID = datasetID, let vehicleID = vehicleID else { return }
+        guard let url = urlBuilder.getVehicleInfoURL(datasetID, vehicleID) else { return }
+        
+        let vehicleInfoTask = urlSession.dataTask(with: url) { data, response, error in
+            if let error = error {
+                print("Error: \(error.localizedDescription)")
+                return
+            }
+            
+            self.vehicleInfo = JSONParser.decode(jsonData: data, into: VehicleInfo.self)
+            print(self.vehicleInfo!)
+            self.completionHandler(self.vehicleInfo)
+        }
+        
+        vehicleInfoTask.resume()
+    }
 }
