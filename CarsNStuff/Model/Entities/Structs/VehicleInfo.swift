@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct VehicleInfo: Codable {
+struct VehicleInfo: Codable, Hashable {
     var vehicleId: Int64
     var year: Int64
     var make: String

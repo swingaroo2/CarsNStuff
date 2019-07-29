@@ -34,4 +34,10 @@ extension URLBuilder {
         let newURL = baseURL?.appendingPathComponent(path)
         return newURL
     }
+    
+    func getDealershipInfoURL(_ datasetID: String,_ dealershipID: Int64) -> URL? {
+        let path = String(format: "/api/%@/dealers/%ld",datasetID,dealershipID)
+        let newURL = baseURL?.appendingPathComponent(path)
+        return newURL
+    }
 }

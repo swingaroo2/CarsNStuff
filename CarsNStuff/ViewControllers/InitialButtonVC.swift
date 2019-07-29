@@ -11,18 +11,25 @@ import UIKit
 class InitialButtonVC: UIViewController {
     
     // MARK: - Properties
+    @IBOutlet weak var progressView: UIView!
     weak var coordinator: MainCoordinator?
     var coreDataManager: CoreDataManager!
+    
 }
-
 // MARK: - IBActions
 extension InitialButtonVC {
     @IBAction func fetchButtonTapped() {
-        let appHttpService = DataTaskManager(with: coreDataManager)
-        appHttpService.fetch()
+        coreDataManager.wipeClean()
+        progressView.isHidden = false
         
-        // TODO: call this in a completion handler.
-        //        coordinator?.showDealerships()
+        let taskManager = DataTaskManager(with: coreDataManager)
+        
+        taskManager.fetch() {
+            DispatchQueue.main.async { [unowned self] in
+                self.progressView.isHidden = true
+                self.coordinator?.showDealerships()
+            }
+        }
     }
 }
 

@@ -44,8 +44,6 @@ class VehicleInfoOperation: Operation {
             self.vehicleInfo = JSONParser.decode(jsonData: data, into: VehicleInfo.self)
             
             guard let vehicleInfo = self.vehicleInfo else { return }
-            print(vehicleInfo)
-            self.coreDataManager.saveNewVehicle(from: vehicleInfo)
             self.completionHandler(vehicleInfo)
         }
         

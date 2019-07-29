@@ -40,7 +40,6 @@ class DatasetOperation: Operation {
             }
             
             self.dataset = JSONParser.decode(jsonData: data, into: Dataset.self)
-            print("\(self.dataset!)")
             self.completionHandler(self.dataset)
         }
         

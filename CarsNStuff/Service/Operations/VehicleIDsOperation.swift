@@ -40,7 +40,6 @@ class VehicleIDsOperation: Operation {
             }
             
             self.vehicleIDs = JSONParser.decode(jsonData: data, into: VehicleIDs.self)
-            print("\(self.vehicleIDs!)")
             self.completionHandler(self.vehicleIDs)
         }
         

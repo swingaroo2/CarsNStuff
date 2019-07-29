@@ -36,15 +36,41 @@ class CoreDataManager {
     }
 }
 
-// MARK: - Save
+// MARK: - Save/Delete
 extension CoreDataManager {
     func save() {
         let context = persistentContainer.viewContext
         executeSave(in: context)
     }
+    
+    func deleteAllRecords(entityName: String) {
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: entityName)
+        fetchRequest.returnsObjectsAsFaults = false
+        
+        persistentContainer.performBackgroundTask { [weak self] context in
+            guard let self = self else { return }
+            do {
+                let results = try context.fetch(fetchRequest)
+                for object in results {
+                    guard let objectData = object as? NSManagedObject else { continue }
+                    context.delete(objectData)
+                    self.executeSave(in: context)
+                }
+            } catch let error {
+                print("[CoreData] Failed to delete all data in \(entityName) error :", error)
+            }
+        }
+    }
+    
+    // NOTE: Each fetch creates the same data with different IDs. To prevent storage overload,
+    //       I call this function each time the button is pressed.
+    func wipeClean() {
+        deleteAllRecords(entityName: "Vehicle")
+        deleteAllRecords(entityName: "Dealership")
+    }
 }
 
-// MARK: Create
+// MARK: New MO creation wrappers
 extension CoreDataManager {
     func saveNewVehicle(from vehicleInfo: VehicleInfo) {
         persistentContainer.performBackgroundTask { [weak self] context in
@@ -55,6 +81,16 @@ extension CoreDataManager {
             newVehicle.make = vehicleInfo.make
             newVehicle.model = vehicleInfo.model
             newVehicle.dealerId = vehicleInfo.dealerId
+            self.executeSave(in: context)
+        }
+    }
+    
+    func saveNewDealership(from dealershipInfo: DealershipInfo) {
+        persistentContainer.performBackgroundTask { [weak self] context in
+            guard let self = self else { return }
+            let newDealership = Dealership(context: context)
+            newDealership.dealerId = dealershipInfo.dealerId
+            newDealership.name = dealershipInfo.name
             self.executeSave(in: context)
         }
     }

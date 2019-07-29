@@ -18,21 +18,63 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GR7-l3-rS7">
-                                <rect key="frame" x="20" y="411" width="374" height="75"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GR7-l3-rS7">
+                                <rect key="frame" x="20" y="410.5" width="374" height="75"/>
                                 <color key="backgroundColor" red="0.2901960784" green="0.6705882353" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="75" id="2gL-f4-t20"/>
+                                    <constraint firstAttribute="width" constant="374" id="ppd-8U-Xtr"/>
+                                </constraints>
                                 <state key="normal" title="Fetch Dealership and Vehicle Data">
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
+                                <state key="selected" title="Fetching..."/>
                                 <connections>
-                                    <action selector="fetchButtonTapped" destination="BYZ-38-t0r" eventType="touchUpInside" id="7qy-Lh-nZi"/>
+                                    <action selector="fetchButtonTapped" destination="BYZ-38-t0r" eventType="touchUpInside" id="1yZ-db-cQQ"/>
                                 </connections>
                             </button>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="grW-jF-VLa" userLabel="Progress View">
+                                <rect key="frame" x="21.5" y="494" width="371" height="21"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fetching..." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fkZ-z1-44u">
+                                        <rect key="frame" x="166" y="0.0" width="89" height="21"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="89" id="HHa-qP-JGV"/>
+                                            <constraint firstAttribute="height" constant="21" id="R7s-aP-6vn"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="sLR-sQ-p3z">
+                                        <rect key="frame" x="138" y="0.5" width="20" height="20"/>
+                                    </activityIndicatorView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="sLR-sQ-p3z" firstAttribute="centerY" secondItem="grW-jF-VLa" secondAttribute="centerY" id="QYp-oE-HRh"/>
+                                    <constraint firstItem="fkZ-z1-44u" firstAttribute="leading" secondItem="sLR-sQ-p3z" secondAttribute="trailing" constant="8" id="TrE-kj-zTC"/>
+                                    <constraint firstAttribute="height" constant="21" id="ewz-Tp-gAI"/>
+                                    <constraint firstItem="fkZ-z1-44u" firstAttribute="centerX" secondItem="grW-jF-VLa" secondAttribute="centerX" constant="25" id="fGy-fe-Mnc"/>
+                                    <constraint firstAttribute="bottom" secondItem="sLR-sQ-p3z" secondAttribute="bottom" constant="0.5" id="hqz-6o-Oc7"/>
+                                    <constraint firstAttribute="width" constant="371" id="jt4-Ko-zg0"/>
+                                    <constraint firstItem="sLR-sQ-p3z" firstAttribute="top" secondItem="grW-jF-VLa" secondAttribute="top" constant="0.5" id="xBn-rs-ojc"/>
+                                    <constraint firstItem="fkZ-z1-44u" firstAttribute="centerY" secondItem="grW-jF-VLa" secondAttribute="centerY" id="yJm-o7-mhQ"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="grW-jF-VLa" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="56Q-K9-GuF"/>
+                            <constraint firstItem="grW-jF-VLa" firstAttribute="top" secondItem="GR7-l3-rS7" secondAttribute="bottom" constant="8.5" id="6ig-jf-vza"/>
+                            <constraint firstItem="GR7-l3-rS7" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Ubb-ad-c4T"/>
+                            <constraint firstItem="GR7-l3-rS7" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="hRu-fD-iZV"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="progressView" destination="grW-jF-VLa" id="mme-YS-Ekb"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
