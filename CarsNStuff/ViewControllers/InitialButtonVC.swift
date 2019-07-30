@@ -12,6 +12,7 @@ class InitialButtonVC: UIViewController {
     
     // MARK: - Properties
     @IBOutlet weak var progressView: UIView!
+    @IBOutlet weak var fetchButton: UIButton!
     weak var coordinator: MainCoordinator!
     var coreDataManager: CoreDataManager!
     
@@ -24,19 +25,17 @@ class InitialButtonVC: UIViewController {
 // MARK: - IBActions
 extension InitialButtonVC {
     @IBAction func fetchButtonTapped(_ sender: UIButton) {
-        sender.disable()
-        progressView.isHidden = false
+        fadeInProgressView()
+        coreDataManager.wipeClean()
         navigationItem.rightBarButtonItem?.isEnabled = false
         
-        coreDataManager.wipeClean()
         let taskManager = DataTaskManager(with: coreDataManager)
         
         taskManager.fetch() {
             DispatchQueue.main.async { [unowned self] in
+                self.fadeOutProgressView()
                 self.navigationItem.rightBarButtonItem?.isEnabled = true
-                self.progressView.isHidden = true
                 self.coordinator.showDealerships()
-                sender.enable(enabledColor: Colors.fetchButton)
             }
         }
     }
@@ -44,6 +43,20 @@ extension InitialButtonVC {
 
 // MARK: - Private functions
 private extension InitialButtonVC {
+    private func fadeInProgressView() {
+        UIView.animate(withDuration: 0.2) {
+            self.fetchButton.alpha = 0.0
+            self.progressView.alpha = 1.0
+        }
+    }
+    
+    private func fadeOutProgressView() {
+        UIView.animate(withDuration: 0.2) {
+            self.fetchButton.alpha = 1.0
+            self.progressView.alpha = 0.0
+        }
+    }
+    
     private func addDealershipsNavButton() {
         let navButton = UIBarButtonItem(title: TitleConstants.dealerships, style: .plain, target: self, action: #selector(dealershipsNavButtonPressed))
         navButton.isEnabled = coreDataManager.hasEntities(named: ModelConstants.dealership)
