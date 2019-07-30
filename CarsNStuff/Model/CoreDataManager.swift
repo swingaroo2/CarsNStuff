@@ -44,6 +44,16 @@ class CoreDataManager {
         
         return frc
     }()
+    
+    lazy private var vehicleFRC: NSFetchedResultsController<Vehicle> = {
+        let fetchRequest: NSFetchRequest<Vehicle> = Vehicle.fetchRequest()
+        fetchRequest.sortDescriptors = [NSSortDescriptor(key: ModelConstants.year, ascending: false)]
+        let frc = NSFetchedResultsController(fetchRequest: fetchRequest,
+                                             managedObjectContext: persistentContainer.viewContext,
+                                             sectionNameKeyPath: nil,
+                                             cacheName: nil)
+        return frc
+    }()
 
     init(modelName: String) {
         self.modelName = modelName
@@ -59,19 +69,16 @@ extension CoreDataManager {
     }
     
     func fetchVehicles(for dealerID: Int) -> [Vehicle] {
-        let fetchRequest: NSFetchRequest<Vehicle> = Vehicle.fetchRequest()
-        fetchRequest.sortDescriptors = [NSSortDescriptor(key: ModelConstants.year, ascending: true)]
-        fetchRequest.predicate = NSPredicate(format: Predicates.hasDealerID, argumentArray: [dealerID])
-        
-        var vehicles = [Vehicle]()
+        vehicleFRC.fetchRequest.predicate = NSPredicate(format: Predicates.hasDealerID, argumentArray: [dealerID])
         
         do {
-            vehicles = try fetchRequest.execute()
+            try vehicleFRC.performFetch()
         } catch {
-            print("Error: \(error.localizedDescription)")
+            print("Error \(error.localizedDescription)")
         }
         
-        return vehicles
+        let fetchedObjects = vehicleFRC.fetchedObjects ?? [Vehicle]()
+        return fetchedObjects
     }
     
     func fetchVehicle(for dealerID: Int, at indexPath: IndexPath) -> Vehicle {

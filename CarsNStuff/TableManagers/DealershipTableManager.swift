@@ -18,7 +18,10 @@ class DealershipTableManager: NSObject {
     init(for dealershipVC: DealershipVC, coreDataManager: CoreDataManager) {
         self.coreDataManager = coreDataManager
         self.dealershipVC = dealershipVC
+        self.dealershipVC.tableView.tableFooterView = UIView()
         super.init()
+        self.dealershipVC.tableView.dataSource = self
+        self.dealershipVC.tableView.delegate = self
         self.coreDataManager.dealershipsDelegate = self
     }
 }
@@ -31,7 +34,6 @@ extension DealershipTableManager: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        // Placeholder
         let cell = tableView.dequeueReusableCell(withIdentifier: CellIdentifiers.generic, for: indexPath)
         let fetchedDealership = coreDataManager.dealershipFRC.object(at: indexPath)
         configure(cell, with: fetchedDealership)
@@ -49,8 +51,7 @@ extension DealershipTableManager: UITableViewDelegate {
         let selectedCell = tableView.cellForRow(at: indexPath)
         selectedCell?.isSelected = false
         let selectedDealership = coreDataManager.dealershipFRC.object(at: indexPath)
-        let selectedDealerID = Int(selectedDealership.dealerId)
-        dealershipVC.coordinator.showVehicles(for: selectedDealerID)
+        dealershipVC.coordinator.showVehicles(for: selectedDealership)
     }
 }
 

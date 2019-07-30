@@ -23,6 +23,7 @@ struct Predicates {
 struct CellIdentifiers {
     static let generic = "Cell"
     static let dealership = "DealershipCell"
+    static let vehicle = "VehicleCell"
 }
 
 struct HttpConstants {
@@ -32,5 +33,4 @@ struct HttpConstants {
 struct TitleConstants {
     static let fetchData = "Fetch Data"
     static let dealerships = "Dealerships"
-    static let vehicles = "Vehicles"
 }

@@ -62,9 +62,11 @@ class DataTaskManager {
             }
             
             group.notify(queue: .main) {
-                self.updateModel()
-                let completionOperation = BlockOperation { completion() }
-                queue.addOperation(completionOperation)
+                let modelUpdateOperation = BlockOperation { self.updateModel() }
+                modelUpdateOperation.completionBlock = {
+                    completion()
+                }
+                queue.addOperation(modelUpdateOperation)
             }
         }
         

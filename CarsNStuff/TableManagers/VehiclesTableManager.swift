@@ -19,7 +19,9 @@ class VehiclesTableManager: NSObject {
     init(for vehiclesVC: VehiclesVC, coreDataManager: CoreDataManager) {
         self.coreDataManager = coreDataManager
         self.vehiclesVC = vehiclesVC
+        self.vehiclesVC.tableView.tableFooterView = UIView()
         super.init()
+        self.vehiclesVC.tableView.dataSource = self
     }
 }
 
@@ -30,20 +32,9 @@ extension VehiclesTableManager: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: CellIdentifiers.generic, for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: CellIdentifiers.vehicle, for: indexPath) as! VehiclesTableViewCell
         let fetchedVehicle = coreDataManager.fetchVehicle(for: vehiclesVC.selectedDealerID, at: indexPath)
-        configure(cell, with: fetchedVehicle)
+        VehiclesTableViewCell.configure(cell, with: fetchedVehicle)
         return cell
-    }
-    
-    private func configure(_ cell: UITableViewCell, with vehicle: Vehicle) {
-        print(#function)
-    }
-}
-
-extension VehiclesTableManager: UITableViewDelegate {
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let selectedCell = tableView.cellForRow(at: indexPath)
-        selectedCell?.isSelected = false
     }
 }

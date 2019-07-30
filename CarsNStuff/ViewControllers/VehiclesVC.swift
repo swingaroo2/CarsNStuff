@@ -16,13 +16,6 @@ class VehiclesVC: UIViewController {
     weak var coordinator: MainCoordinator!
     var tableManager: VehiclesTableManager!
     var selectedDealerID: Int!
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        tableView.tableFooterView = UIView()
-        tableView.delegate = tableManager
-        tableView.dataSource = tableManager
-    }
 }
 
 extension VehiclesVC: Storyboarded {}

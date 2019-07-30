@@ -39,13 +39,13 @@ extension MainCoordinator {
         navigationController.pushViewController(dealershipVC, animated: true)
     }
     
-    func showVehicles(for selectedDealerID: Int) {
+    func showVehicles(for selectedDealership: Dealership) {
         let vehiclesVC = VehiclesVC.instantiate()
-        vehiclesVC.title = TitleConstants.vehicles
-        vehiclesVC.loadViewIfNeeded()
+        vehiclesVC.title = selectedDealership.name
         vehiclesVC.coordinator = self
+        vehiclesVC.loadViewIfNeeded()
         vehiclesVC.tableManager = VehiclesTableManager(for: vehiclesVC, coreDataManager: coreDataManager)
-        vehiclesVC.selectedDealerID = selectedDealerID
+        vehiclesVC.selectedDealerID = Int(selectedDealership.dealerId)
         navigationController.pushViewController(vehiclesVC, animated: true)
     }
 }

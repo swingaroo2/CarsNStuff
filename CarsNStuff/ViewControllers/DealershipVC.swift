@@ -16,14 +16,6 @@ class DealershipVC: UIViewController {
     
     weak var coordinator: MainCoordinator!
     var tableManager: DealershipTableManager!
-    
-    // MARK: - Lifecycle Functions
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        tableView.tableFooterView = UIView()
-        tableView.delegate = tableManager
-        tableView.dataSource = tableManager
-    }
 }
 
 extension DealershipVC: Storyboarded {}
