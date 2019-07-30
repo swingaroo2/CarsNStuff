@@ -60,9 +60,7 @@ private extension InitialButtonVC {
     }
     
     func monitorNetworkStatus() {
-        monitor.pathUpdateHandler = { [weak self] pathUpdateHandler in
-            guard let self = self else { return }
-            
+        monitor.pathUpdateHandler = { [unowned self] pathUpdateHandler in
             DispatchQueue.main.async {
                 let hasInternetConnection = pathUpdateHandler.status == .satisfied
                 self.setFetchButtonState(for: hasInternetConnection)

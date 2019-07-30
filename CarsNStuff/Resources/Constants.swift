@@ -48,6 +48,10 @@ struct Predicates {
     static let hasDealerID = "dealerId == %@"
 }
 
+struct StoryboardConstants {
+    static let main = "Main"
+}
+
 struct TitleConstants {
     static let fetchData = "Fetch Data"
     static let fetching = "Fetching..."
