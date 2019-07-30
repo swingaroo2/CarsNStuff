@@ -33,16 +33,11 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="WXD-mS-Stl">
-                                <rect key="frame" x="188.66666666666666" y="349.66666666666669" width="37" height="37"/>
-                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                         <constraints>
                             <constraint firstItem="a2Z-Co-crJ" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" constant="5.3333333333333144" id="8Cq-yg-AYY"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="1OU-qp-mgl" secondAttribute="bottom" constant="20" id="cvU-pP-wq8"/>
-                            <constraint firstItem="WXD-mS-Stl" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="dUe-It-Xp0"/>
-                            <constraint firstItem="WXD-mS-Stl" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="fo1-uy-3bP"/>
                             <constraint firstItem="1OU-qp-mgl" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="qrE-gi-Wi0"/>
                             <constraint firstItem="a2Z-Co-crJ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="10" id="umj-9o-1gf">
                                 <variation key="heightClass=regular-widthClass=regular" constant="200"/>
