@@ -16,6 +16,14 @@ class DealershipVC: UIViewController {
     
     weak var coordinator: MainCoordinator!
     var tableManager: DealershipTableManager!
+    
+}
+
+// MARK: - Horizontal size class handling
+extension DealershipVC {
+    @objc func dismissModalVC() {
+        coordinator.dismiss(self.navigationController)
+    }
 }
 
 extension DealershipVC: Storyboarded {}

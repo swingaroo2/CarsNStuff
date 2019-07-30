@@ -18,4 +18,11 @@ class VehiclesVC: UIViewController {
     var selectedDealerID: Int!
 }
 
+// MARK: - Horizontal size class handling
+extension VehiclesVC {
+    @objc func dismissModalVC() {
+        coordinator.dismiss(self.navigationController)
+    }
+}
+
 extension VehiclesVC: Storyboarded {}

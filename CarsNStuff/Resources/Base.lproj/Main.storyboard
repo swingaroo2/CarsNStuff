@@ -19,18 +19,18 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GR7-l3-rS7">
-                                <rect key="frame" x="20" y="410.5" width="374" height="75"/>
+                                <rect key="frame" x="57" y="410.5" width="300" height="75"/>
                                 <color key="backgroundColor" red="0.2901960784" green="0.6705882353" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="75" id="2gL-f4-t20"/>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="374" id="ppd-8U-Xtr"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="300" id="ppd-8U-Xtr"/>
                                 </constraints>
                                 <state key="normal" title="Fetch Dealership and Vehicle Data">
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
                                 <state key="selected" title="Fetching..."/>
                                 <connections>
-                                    <action selector="fetchButtonTapped" destination="BYZ-38-t0r" eventType="touchUpInside" id="1yZ-db-cQQ"/>
+                                    <action selector="fetchButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="WG0-5s-AhW"/>
                                 </connections>
                             </button>
                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="grW-jF-VLa" userLabel="Progress View">

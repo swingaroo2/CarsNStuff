@@ -35,12 +35,18 @@ extension MainCoordinator {
         dealershipVC.title = TitleConstants.dealerships
         dealershipVC.coordinator = self
         dealershipVC.loadViewIfNeeded()
-        dealershipVC.modalPresentationStyle = .formSheet
         dealershipVC.tableManager = DealershipTableManager(for: dealershipVC, coreDataManager: coreDataManager)
         
-        let isHorizontalRegular = dealershipVC.traitCollection.horizontalSizeClass == .regular
+        let isHorizontalRegular = UIScreen.main.traitCollection.horizontalSizeClass == .regular
         if isHorizontalRegular {
-            navigationController.present(dealershipVC, animated: true, completion: nil)
+            let newNavController = UINavigationController(rootViewController: dealershipVC)
+            newNavController.modalPresentationStyle = .formSheet
+            
+            let dismissButton = UIBarButtonItem(title: TitleConstants.dismiss, style: .plain, target: dealershipVC, action: #selector(DealershipVC.dismissModalVC))
+            
+            dealershipVC.navigationItem.rightBarButtonItem = dismissButton
+            
+            navigationController.present(newNavController, animated: true, completion: nil)
         } else {
             navigationController.pushViewController(dealershipVC, animated: true)
         }
@@ -55,11 +61,20 @@ extension MainCoordinator {
         vehiclesVC.tableManager = VehiclesTableManager(for: vehiclesVC, coreDataManager: coreDataManager)
         vehiclesVC.selectedDealerID = Int(selectedDealership.dealerId)
         
-        let isHorizontalRegular = vehiclesVC.traitCollection.horizontalSizeClass == .regular
+        let isHorizontalRegular = UIScreen.main.traitCollection.horizontalSizeClass == .regular
+        var presentingVC = navigationController
+        
         if isHorizontalRegular {
-            navigationController.present(vehiclesVC, animated: true, completion: nil)
-        } else {
-            navigationController.pushViewController(vehiclesVC, animated: true)
+            guard let modalDealershipsVC = navigationController.presentedViewController as? UINavigationController else { return }
+            let dismissButton = UIBarButtonItem(title: TitleConstants.dismiss, style: .plain, target: vehiclesVC, action: #selector(VehiclesVC.dismissModalVC))
+            vehiclesVC.navigationItem.rightBarButtonItem = dismissButton
+            presentingVC = modalDealershipsVC
         }
+        
+        presentingVC.pushViewController(vehiclesVC, animated: true)
+    }
+    
+    func dismiss(_ viewController: UIViewController?) {
+        viewController?.dismiss(animated: true, completion: nil)
     }
 }

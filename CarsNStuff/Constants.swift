@@ -7,7 +7,9 @@
 //
 
 import Foundation
+import UIKit
 
+// MARK: - Structs
 struct ModelConstants {
     static let modelName = "CarsNStuff"
     static let vehicle = "Vehicle"
@@ -33,4 +35,17 @@ struct HttpConstants {
 struct TitleConstants {
     static let fetchData = "Fetch Data"
     static let dealerships = "Dealerships"
+    static let dismiss = "Dismiss"
 }
+
+struct Colors {
+    static let fetchButton = UIColor(red: 74/255.0, green: 171/255.0, blue: 247/255.0, alpha: 1)
+}
+
+// MARK: - Enums
+enum ButtonState {
+    case enabled
+    case disabled
+}
+
+

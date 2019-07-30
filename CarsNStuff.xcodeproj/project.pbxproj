@@ -130,9 +130,9 @@
 		92A8EB9322ECEE63000EC835 /* CarsNStuffUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarsNStuffUITests.swift; sourceTree = "<group>"; };
 		92A8EB9522ECEE63000EC835 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		92A8EBA222ECEE8B000EC835 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
-		92A8EBA622ECEE94000EC835 /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
+		92A8EBA622ECEE94000EC835 /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; wrapsLines = 0; };
 		92A8EBAB22ECF036000EC835 /* Storyboarded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboarded.swift; sourceTree = "<group>"; };
-		92A8EBB122ECF0E1000EC835 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		92A8EBB122ECF0E1000EC835 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; wrapsLines = 0; };
 		92A8EBB622ECF6C4000EC835 /* DealershipVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DealershipVC.swift; sourceTree = "<group>"; };
 		92A8EBC122ECFC23000EC835 /* DealershipTableManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DealershipTableManager.swift; sourceTree = "<group>"; };
 		92A8EBC622ED02F0000EC835 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };

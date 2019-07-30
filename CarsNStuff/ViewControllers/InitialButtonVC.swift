@@ -19,21 +19,12 @@ class InitialButtonVC: UIViewController {
         super.viewWillAppear(animated)
         addDealershipsNavButton()
     }
-    
-    private func addDealershipsNavButton() {
-        let navButton = UIBarButtonItem(title: TitleConstants.dealerships, style: .plain, target: self, action: #selector(dealershipsNavButtonPressed))
-        navButton.isEnabled = coreDataManager.hasEntities(named: ModelConstants.dealership)
-        navigationItem.rightBarButtonItem = navButton
-    }
-    
-    @objc private func dealershipsNavButtonPressed() {
-        coordinator.showDealerships()
-    }
 }
 
 // MARK: - IBActions
 extension InitialButtonVC {
-    @IBAction func fetchButtonTapped() {
+    @IBAction func fetchButtonTapped(_ sender: UIButton) {
+        sender.disable()
         progressView.isHidden = false
         navigationItem.rightBarButtonItem?.isEnabled = false
         
@@ -45,10 +36,40 @@ extension InitialButtonVC {
                 self.navigationItem.rightBarButtonItem?.isEnabled = true
                 self.progressView.isHidden = true
                 self.coordinator.showDealerships()
+                sender.enable(enabledColor: Colors.fetchButton)
             }
         }
     }
 }
 
+// MARK: - Private functions
+private extension InitialButtonVC {
+    private func addDealershipsNavButton() {
+        let navButton = UIBarButtonItem(title: TitleConstants.dealerships, style: .plain, target: self, action: #selector(dealershipsNavButtonPressed))
+        navButton.isEnabled = coreDataManager.hasEntities(named: ModelConstants.dealership)
+        navigationItem.rightBarButtonItem = navButton
+    }
+    
+    @objc private func dealershipsNavButtonPressed() {
+        coordinator.showDealerships()
+    }
+}
+
 // MARK: - Storyboarded
 extension InitialButtonVC: Storyboarded {}
+
+extension UIButton {
+    func enable(enabledColor: UIColor) {
+        isEnabled = true
+        backgroundColor = enabledColor
+        setTitleColor(.darkText, for: .normal)
+        setTitleColor(.darkText, for: .selected)
+    }
+    
+    func disable(disabledColor: UIColor? = UIColor.lightGray) {
+        isEnabled = false
+        backgroundColor = disabledColor
+        setTitleColor(.lightText, for: .normal)
+        setTitleColor(.lightText, for: .selected)
+    }
+}
