@@ -30,7 +30,7 @@ class VehicleInfoOperation: Operation {
             return
         }
         
-        // TODO: Graceful error handling
+        
         let urlBuilder = URLBuilder(basePath: HttpConstants.basePath)
         guard let datasetID = datasetID, let vehicleID = vehicleID else { return }
         guard let url = urlBuilder.getVehicleInfoURL(datasetID, vehicleID) else { return }

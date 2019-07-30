@@ -10,6 +10,32 @@ import Foundation
 import UIKit
 
 // MARK: - String structs
+struct AlertConstants {
+    static let connectionErrorTitle = "Unable to fetch data"
+    static let connectionErrorMessage = "The Internet connection appears to be offline"
+    static let ok = "OK"
+}
+
+struct ButtonTitles {
+    static let fetchButtonNormal = "Fetch Dealership and Vehicle Data"
+    static let fetchButtonNoInternetConnection = "No Internet Connection"
+    static let fetchButtonSelected = "Fetching..."
+}
+
+struct CellIdentifiers {
+    static let generic = "Cell"
+    static let dealership = "DealershipCell"
+    static let vehicle = "VehicleCell"
+}
+
+struct GeneralConstants {
+    static let connectionMonitor = "InternetConnectionMonitor"
+}
+
+struct HttpConstants {
+    static let basePath = "https://api.coxauto-interview.com"
+}
+
 struct ModelConstants {
     static let modelName = "CarsNStuff"
     static let vehicle = "Vehicle"
@@ -22,26 +48,11 @@ struct Predicates {
     static let hasDealerID = "dealerId == %@"
 }
 
-struct CellIdentifiers {
-    static let generic = "Cell"
-    static let dealership = "DealershipCell"
-    static let vehicle = "VehicleCell"
-}
-
-struct HttpConstants {
-    static let basePath = "https://api.coxauto-interview.com"
-}
-
 struct TitleConstants {
     static let fetchData = "Fetch Data"
     static let fetching = "Fetching..."
     static let dealerships = "Dealerships"
     static let dismiss = "Dismiss"
-}
-
-struct ButtonTitles {
-    static let fetchButtonNormal = "Fetch Dealership and Vehicle Data"
-    static let fetchButtonSelected = "Fetching..."
 }
 
 // MARK: - Color structs
@@ -50,10 +61,7 @@ struct Colors {
 }
 
 // MARK: - Enums
-
 enum ButtonState {
     case enabled
     case disabled
 }
-
-

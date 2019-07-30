@@ -9,6 +9,11 @@
 /* Begin PBXBuildFile section */
 		9224971822F01B01002885CA /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A8EBB122ECF0E1000EC835 /* Constants.swift */; };
 		9224971922F01B02002885CA /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A8EBB122ECF0E1000EC835 /* Constants.swift */; };
+		9224972422F0E97E002885CA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A8EB7022ECEE62000EC835 /* AppDelegate.swift */; };
+		9224972522F0E97F002885CA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A8EB7022ECEE62000EC835 /* AppDelegate.swift */; };
+		9224972822F0F3B3002885CA /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9224972722F0F3B3002885CA /* UIView+Extension.swift */; };
+		9224972922F0F3B3002885CA /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9224972722F0F3B3002885CA /* UIView+Extension.swift */; };
+		9224972A22F0F3B3002885CA /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9224972722F0F3B3002885CA /* UIView+Extension.swift */; };
 		9239822B22EFD9530025ACE7 /* VehiclesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9239822A22EFD9530025ACE7 /* VehiclesVC.swift */; };
 		9239822C22EFD9530025ACE7 /* VehiclesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9239822A22EFD9530025ACE7 /* VehiclesVC.swift */; };
 		9239822D22EFD9530025ACE7 /* VehiclesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9239822A22EFD9530025ACE7 /* VehiclesVC.swift */; };
@@ -112,12 +117,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9224972722F0F3B3002885CA /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		9239822A22EFD9530025ACE7 /* VehiclesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehiclesVC.swift; sourceTree = "<group>"; };
 		9239822F22EFDE6C0025ACE7 /* VehiclesTableManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehiclesTableManager.swift; sourceTree = "<group>"; wrapsLines = 0; };
 		9239823422EFEA730025ACE7 /* VehiclesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehiclesTableViewCell.swift; sourceTree = "<group>"; };
 		92A8EB6D22ECEE62000EC835 /* CarsNStuff.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CarsNStuff.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		92A8EB7022ECEE62000EC835 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; wrapsLines = 0; };
-		92A8EB7222ECEE62000EC835 /* InitialButtonVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialButtonVC.swift; sourceTree = "<group>"; };
+		92A8EB7222ECEE62000EC835 /* InitialButtonVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialButtonVC.swift; sourceTree = "<group>"; wrapsLines = 0; };
 		92A8EB7522ECEE62000EC835 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		92A8EB7822ECEE62000EC835 /* CarsNStuff.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CarsNStuff.xcdatamodel; sourceTree = "<group>"; };
 		92A8EB7A22ECEE62000EC835 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -178,6 +184,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9224972622F0F39C002885CA /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				9224972722F0F3B3002885CA /* UIView+Extension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		9239822E22EFDE590025ACE7 /* TableManagers */ = {
 			isa = PBXGroup;
 			children = (
@@ -221,6 +235,7 @@
 				92A8EB7F22ECEE62000EC835 /* Info.plist */,
 				92A8EB7022ECEE62000EC835 /* AppDelegate.swift */,
 				92A8EBA122ECEE78000EC835 /* Coordinators */,
+				9224972622F0F39C002885CA /* Extensions */,
 				92A8EBC522ED02CC000EC835 /* Model */,
 				92A8EBB522ECF415000EC835 /* Resources */,
 				92A8EBCE22ED0DB5000EC835 /* Service */,
@@ -475,6 +490,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9239823522EFEA730025ACE7 /* VehiclesTableViewCell.swift in Sources */,
+				9224972822F0F3B3002885CA /* UIView+Extension.swift in Sources */,
 				92A8EBC222ECFC23000EC835 /* DealershipTableManager.swift in Sources */,
 				92AC3C0122EF5B4B0062F91F /* DealershipInfo.swift in Sources */,
 				92A8EBA322ECEE8B000EC835 /* Coordinator.swift in Sources */,
@@ -510,9 +526,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				92FE23EB22EE9214008728C5 /* JSONParser.swift in Sources */,
+				9224972922F0F3B3002885CA /* UIView+Extension.swift in Sources */,
 				92A8EBAF22ECF091000EC835 /* InitialButtonVC.swift in Sources */,
 				92E24BE122EEB97B00870E77 /* Vehicle+CoreDataProperties.swift in Sources */,
 				92A8EBC322ECFC23000EC835 /* DealershipTableManager.swift in Sources */,
+				9224972422F0E97E002885CA /* AppDelegate.swift in Sources */,
 				92AC3C0222EF5B4B0062F91F /* DealershipInfo.swift in Sources */,
 				92A8EBA422ECEE8B000EC835 /* Coordinator.swift in Sources */,
 				92FE23E322EE5BA4008728C5 /* DataTaskManager.swift in Sources */,
@@ -544,9 +562,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				92FE23EC22EE9214008728C5 /* JSONParser.swift in Sources */,
+				9224972A22F0F3B3002885CA /* UIView+Extension.swift in Sources */,
 				92A8EBB022ECF092000EC835 /* InitialButtonVC.swift in Sources */,
 				92E24BE222EEB97B00870E77 /* Vehicle+CoreDataProperties.swift in Sources */,
 				92A8EBC422ECFC23000EC835 /* DealershipTableManager.swift in Sources */,
+				9224972522F0E97F002885CA /* AppDelegate.swift in Sources */,
 				92AC3C0322EF5B4B0062F91F /* DealershipInfo.swift in Sources */,
 				92A8EBA522ECEE8B000EC835 /* Coordinator.swift in Sources */,
 				92FE23E422EE5BA4008728C5 /* DataTaskManager.swift in Sources */,

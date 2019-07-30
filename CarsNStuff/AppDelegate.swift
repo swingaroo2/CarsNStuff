@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreData
+import Network
 
 @UIApplicationMain
 class AppDelegate: UIResponder {

@@ -7,33 +7,39 @@
 //
 
 import UIKit
+import Network
 
 class InitialButtonVC: UIViewController {
     
     // MARK: - Properties
     @IBOutlet weak var progressView: UIView!
     @IBOutlet weak var fetchButton: UIButton!
+    
     weak var coordinator: MainCoordinator!
     var coreDataManager: CoreDataManager!
+    
+    private let monitor = NWPathMonitor()
+    private let appDelegate = UIApplication.shared.delegate as! AppDelegate
+    private let networkStatusQueue = DispatchQueue(label: GeneralConstants.connectionMonitor)
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         addDealershipsNavButton()
+        monitorNetworkStatus()
     }
 }
 
 // MARK: - IBActions
 extension InitialButtonVC {
     @IBAction func fetchButtonTapped(_ sender: UIButton) {
-        fadeInProgressView()
+        sender.fadeOut(for: progressView)
         coreDataManager.wipeClean()
         navigationItem.rightBarButtonItem?.isEnabled = false
         
         let taskManager = DataTaskManager(with: coreDataManager)
-        
         taskManager.fetch() {
             DispatchQueue.main.async { [unowned self] in
-                self.fadeOutProgressView()
+                self.progressView.fadeOut(for: sender)
                 self.navigationItem.rightBarButtonItem?.isEnabled = true
                 self.coordinator.showDealerships()
             }
@@ -43,27 +49,43 @@ extension InitialButtonVC {
 
 // MARK: - Private functions
 private extension InitialButtonVC {
-    private func fadeInProgressView() {
-        UIView.animate(withDuration: 0.2) {
-            self.fetchButton.alpha = 0.0
-            self.progressView.alpha = 1.0
-        }
+    func setFetchButtonState(for connectionStatus: Bool) {
+        let backgroundColor = connectionStatus ? Colors.fetchButton : .lightGray
+        let titleColor: UIColor = connectionStatus ? .darkText : .lightText
+        let title = connectionStatus ? ButtonTitles.fetchButtonNormal : ButtonTitles.fetchButtonNoInternetConnection
+        self.fetchButton.isEnabled = connectionStatus
+        self.fetchButton.backgroundColor = backgroundColor
+        self.fetchButton.setTitleColor(titleColor, for: .normal)
+        self.fetchButton.setTitle(title, for: .normal)
     }
     
-    private func fadeOutProgressView() {
-        UIView.animate(withDuration: 0.2) {
-            self.fetchButton.alpha = 1.0
-            self.progressView.alpha = 0.0
+    func monitorNetworkStatus() {
+        monitor.pathUpdateHandler = { [weak self] pathUpdateHandler in
+            guard let self = self else { return }
+            
+            DispatchQueue.main.async {
+                let hasInternetConnection = pathUpdateHandler.status == .satisfied
+                self.setFetchButtonState(for: hasInternetConnection)
+            }
         }
+        
+        monitor.start(queue: networkStatusQueue)
     }
     
-    private func addDealershipsNavButton() {
+    func presentAlert(with title: String?, and message: String) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let action = UIAlertAction(title: AlertConstants.ok, style: .cancel, handler: nil)
+        alert.addAction(action)
+        present(alert, animated: true, completion: nil)
+    }
+    
+    func addDealershipsNavButton() {
         let navButton = UIBarButtonItem(title: TitleConstants.dealerships, style: .plain, target: self, action: #selector(dealershipsNavButtonPressed))
         navButton.isEnabled = coreDataManager.hasEntities(named: ModelConstants.dealership)
         navigationItem.rightBarButtonItem = navButton
     }
     
-    @objc private func dealershipsNavButtonPressed() {
+    @objc func dealershipsNavButtonPressed() {
         coordinator.showDealerships()
     }
 }

@@ -30,7 +30,7 @@ class DataTaskManager {
         let urlSession = URLSession(configuration: .default)
         let group = DispatchGroup()
         
-        // TODO: Graceful error handling
+        
         let vehicleIDsOperation = VehicleIDsOperation(urlSession) { vehicleIDs in
             vehicleIDs?.vehicleIds.forEach { vehicleID in
                 group.enter()
