@@ -10,6 +10,8 @@ import Foundation
 
 struct ModelConstants {
     static let modelName = "CarsNStuff"
+    static let vehicle = "Vehicle"
+    static let dealership = "Dealership"
 }
 
 struct CellIdentifiers {

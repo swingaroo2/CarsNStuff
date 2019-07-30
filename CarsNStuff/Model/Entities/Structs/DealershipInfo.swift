@@ -11,4 +11,12 @@ import Foundation
 struct DealershipInfo: Codable, Hashable {
     var dealerId: Int64
     var name: String
+    
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(name)
+    }
+    
+    static func ==(lhs: DealershipInfo, rhs: DealershipInfo) -> Bool {
+        return lhs.name == rhs.name && lhs.dealerId == rhs.dealerId
+    }
 }

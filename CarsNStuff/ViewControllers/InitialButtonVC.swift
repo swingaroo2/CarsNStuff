@@ -16,12 +16,12 @@ class InitialButtonVC: UIViewController {
     var coreDataManager: CoreDataManager!
     
 }
+
 // MARK: - IBActions
 extension InitialButtonVC {
     @IBAction func fetchButtonTapped() {
-        coreDataManager.wipeClean()
         progressView.isHidden = false
-        
+        coreDataManager.wipeClean()
         let taskManager = DataTaskManager(with: coreDataManager)
         
         taskManager.fetch() {

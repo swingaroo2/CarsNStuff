@@ -21,6 +21,10 @@ class DataTaskManager {
         self.dealershipSet = Set<DealershipInfo>()
     }
     
+    func updateModel() {
+        coreDataManager.update(with: self.vehicleSet, dealerships: self.dealershipSet)
+    }
+    
     func fetch(completion: @escaping VoidCompletionHandler) {
         let queue = OperationQueue()
         let urlSession = URLSession(configuration: .default)
@@ -34,7 +38,6 @@ class DataTaskManager {
                     guard let vehicle = vehicle else {
                         return
                     }
-                    let dealershipID = vehicle.dealerId
                     self.vehicleSet.insert(vehicle)
                     
                     let dealershipInfoOperation = DealershipInfoOperation(urlSession) { dealership in
@@ -45,6 +48,7 @@ class DataTaskManager {
                         self.dealershipSet.insert(dealership)
                     }
                     
+                    let dealershipID = vehicle.dealerId
                     dealershipInfoOperation.coreDataManager = self.coreDataManager
                     dealershipInfoOperation.datasetID = self.datasetID
                     dealershipInfoOperation.dealershipID = dealershipID
@@ -58,17 +62,13 @@ class DataTaskManager {
             }
             
             group.notify(queue: .main) {
-                let completionOperation = BlockOperation {
-                    completion()
-                }
-                
+                self.updateModel()
+                let completionOperation = BlockOperation { completion() }
                 queue.addOperation(completionOperation)
             }
-            
         }
         
         let datasetOperation = DatasetOperation(urlSession) { dataset in
-            print("Dataset completion block")
             vehicleIDsOperation.datasetID = dataset?.datasetId
             self.datasetID = dataset?.datasetId
             queue.addOperation(vehicleIDsOperation)

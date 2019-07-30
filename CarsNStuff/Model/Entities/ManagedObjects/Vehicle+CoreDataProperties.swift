@@ -22,6 +22,6 @@ extension Vehicle {
     @NSManaged public var make: String
     @NSManaged public var model: String
     @NSManaged public var dealerId: Int64
-    @NSManaged public var dealership: Dealership?
+    @NSManaged public var dealership: Dealership
 
 }

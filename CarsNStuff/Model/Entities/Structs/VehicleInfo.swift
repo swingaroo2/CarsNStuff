@@ -14,4 +14,19 @@ struct VehicleInfo: Codable, Hashable {
     var make: String
     var model: String
     var dealerId: Int64
+    
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(year)
+        hasher.combine(make)
+        hasher.combine(model)
+        hasher.combine(vehicleId)
+        hasher.combine(dealerId)
+    }
+    
+    static func ==(lhs: VehicleInfo, rhs: VehicleInfo) -> Bool {
+        let isEqual = lhs.year == rhs.year && lhs.make == rhs.make &&
+                      lhs.model == rhs.model && lhs.vehicleId == rhs.vehicleId &&
+                      lhs.dealerId == rhs.dealerId
+        return isEqual
+    }
 }

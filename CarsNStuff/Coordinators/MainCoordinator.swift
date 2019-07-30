@@ -29,7 +29,6 @@ class MainCoordinator: Coordinator {
 // MARK: Navigation functions
 extension MainCoordinator {
     func showDealerships() {
-        print(#function)
         let dealershipVC = DealershipVC.instantiate()
         dealershipVC.coordinator = self
         dealershipVC.tableManager = DealershipTableManager(coreDataManager: coreDataManager)
