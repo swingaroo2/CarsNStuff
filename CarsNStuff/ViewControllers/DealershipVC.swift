@@ -14,7 +14,7 @@ class DealershipVC: UIViewController {
     // MARK: - Properties
     @IBOutlet weak var tableView: UITableView!
     
-    weak var coordinator: MainCoordinator?
+    weak var coordinator: MainCoordinator!
     var tableManager: DealershipTableManager!
     
     // MARK: - Lifecycle Functions

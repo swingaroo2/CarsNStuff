@@ -36,7 +36,16 @@ class CoreDataManager {
     }
 }
 
-// MARK: - Save/Delete
+// MARK: Exists checking
+extension CoreDataManager {
+    func hasEntities(named entityName: String) -> Bool {
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: entityName)
+        let entitesCount = try? persistentContainer.viewContext.count(for: fetchRequest)
+        return (entitesCount ?? 0) > 0
+    }
+}
+
+// MARK: - Save/Delete/Update
 extension CoreDataManager {
     func save() {
         let context = persistentContainer.viewContext
@@ -50,25 +59,8 @@ extension CoreDataManager {
         deleteAllRecords(entityName: ModelConstants.dealership)
     }
     
-    private func deleteAllRecords(entityName: String) {
-        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: entityName)
-        fetchRequest.returnsObjectsAsFaults = false
-        do {
-            let moc = persistentContainer.viewContext
-            let results = try moc.fetch(fetchRequest)
-            for object in results {
-                guard let objectData = object as? NSManagedObject else { continue }
-                moc.delete(objectData)
-                save()
-            }
-        } catch let error {
-            print("Failed to delete all data in \(entityName) error :", error)
-        }
-    }
-}
 
-// MARK: New MO creation wrappers
-extension CoreDataManager {
+    
     func update(with vehicles: Set<VehicleInfo>, dealerships: Set<DealershipInfo>) {
         persistentContainer.performBackgroundTask { [weak self] context in
             dealerships.forEach { dealershipInfo in
@@ -95,13 +87,29 @@ private extension CoreDataManager {
         }
     }
     
-    private func add(_ ownedVehicles: Set<VehicleInfo>, to dealership: Dealership, in context: NSManagedObjectContext) {
+    func deleteAllRecords(entityName: String) {
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: entityName)
+        fetchRequest.returnsObjectsAsFaults = false
+        do {
+            let moc = persistentContainer.viewContext
+            let results = try moc.fetch(fetchRequest)
+            for object in results {
+                guard let objectData = object as? NSManagedObject else { continue }
+                moc.delete(objectData)
+                save()
+            }
+        } catch let error {
+            print("Failed to delete all data in \(entityName) error :", error)
+        }
+    }
+    
+    func add(_ ownedVehicles: Set<VehicleInfo>, to dealership: Dealership, in context: NSManagedObjectContext) {
         let ownedVehicleMOs = ownedVehicles.map { self.createNewVehicle(from: $0, in: context, with: dealership) }
         let vehicleSet = NSSet(array: ownedVehicleMOs)
         dealership.addToVehicles(vehicleSet)
     }
     
-    private func createNewVehicle(from vehicleInfo: VehicleInfo, in context: NSManagedObjectContext, with dealership: Dealership) -> Vehicle {
+    func createNewVehicle(from vehicleInfo: VehicleInfo, in context: NSManagedObjectContext, with dealership: Dealership) -> Vehicle {
         let newVehicle = Vehicle(context: context)
         newVehicle.vehicleId = vehicleInfo.vehicleId
         newVehicle.year = vehicleInfo.year

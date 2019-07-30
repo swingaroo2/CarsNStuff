@@ -22,3 +22,7 @@ struct CellIdentifiers {
 struct HttpConstants {
     static let basePath = "https://api.coxauto-interview.com"
 }
+
+struct TitleConstants {
+    static let dealerships = "Dealerships"
+}
