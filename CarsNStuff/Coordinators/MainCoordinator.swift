@@ -35,8 +35,16 @@ extension MainCoordinator {
         dealershipVC.title = TitleConstants.dealerships
         dealershipVC.coordinator = self
         dealershipVC.loadViewIfNeeded()
+        dealershipVC.modalPresentationStyle = .formSheet
         dealershipVC.tableManager = DealershipTableManager(for: dealershipVC, coreDataManager: coreDataManager)
-        navigationController.pushViewController(dealershipVC, animated: true)
+        
+        let isHorizontalRegular = dealershipVC.traitCollection.horizontalSizeClass == .regular
+        if isHorizontalRegular {
+            navigationController.present(dealershipVC, animated: true, completion: nil)
+        } else {
+            navigationController.pushViewController(dealershipVC, animated: true)
+        }
+        
     }
     
     func showVehicles(for selectedDealership: Dealership) {
@@ -46,6 +54,12 @@ extension MainCoordinator {
         vehiclesVC.loadViewIfNeeded()
         vehiclesVC.tableManager = VehiclesTableManager(for: vehiclesVC, coreDataManager: coreDataManager)
         vehiclesVC.selectedDealerID = Int(selectedDealership.dealerId)
-        navigationController.pushViewController(vehiclesVC, animated: true)
+        
+        let isHorizontalRegular = vehiclesVC.traitCollection.horizontalSizeClass == .regular
+        if isHorizontalRegular {
+            navigationController.present(vehiclesVC, animated: true, completion: nil)
+        } else {
+            navigationController.pushViewController(vehiclesVC, animated: true)
+        }
     }
 }

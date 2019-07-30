@@ -21,8 +21,8 @@ class DataTaskManager {
         self.dealershipSet = Set<DealershipInfo>()
     }
     
-    func updateModel() {
-        coreDataManager.update(with: self.vehicleSet, dealerships: self.dealershipSet)
+    func updateModel(_ completion: @escaping VoidCompletionHandler) {
+        coreDataManager.update(with: self.vehicleSet, self.dealershipSet, completion)
     }
     
     func fetch(completion: @escaping VoidCompletionHandler) {
@@ -62,11 +62,7 @@ class DataTaskManager {
             }
             
             group.notify(queue: .main) {
-                let modelUpdateOperation = BlockOperation { self.updateModel() }
-                modelUpdateOperation.completionBlock = {
-                    completion()
-                }
-                queue.addOperation(modelUpdateOperation)
+                self.updateModel(completion)
             }
         }
         

@@ -83,7 +83,7 @@
         <!--DealershipVC-->
         <scene sceneID="aG8-tg-gFZ">
             <objects>
-                <viewController storyboardIdentifier="DealershipVC" id="qsQ-GL-lYp" customClass="DealershipVC" customModule="CarsNStuff" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DealershipVC" modalPresentationStyle="formSheet" id="qsQ-GL-lYp" customClass="DealershipVC" customModule="CarsNStuff" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="fs7-QB-aya">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

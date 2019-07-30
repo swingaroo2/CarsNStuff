@@ -10,7 +10,7 @@ import Foundation
 import CoreData
 
 class CoreDataManager {
-
+    typealias VoidCompletionHandler = () -> ()
     weak var dealershipsDelegate: NSFetchedResultsControllerDelegate?
     var modelName: String
     
@@ -104,7 +104,7 @@ extension CoreDataManager {
     
 
     
-    func update(with vehicles: Set<VehicleInfo>, dealerships: Set<DealershipInfo>) {
+    func update(with vehicles: Set<VehicleInfo>,_ dealerships: Set<DealershipInfo>,_ completion: @escaping VoidCompletionHandler) {
         persistentContainer.performBackgroundTask { [weak self] context in
             dealerships.forEach { dealershipInfo in
                 guard let self = self else { return }
@@ -113,6 +113,7 @@ extension CoreDataManager {
                 self.add(ownedVehicles, to: newDealership, in: context)
                 self.executeSave(in: context)
             }
+            completion()
         }
     }
 }
