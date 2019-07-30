@@ -39,8 +39,6 @@
 		92A8EBAF22ECF091000EC835 /* InitialButtonVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A8EB7222ECEE62000EC835 /* InitialButtonVC.swift */; };
 		92A8EBB022ECF092000EC835 /* InitialButtonVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A8EB7222ECEE62000EC835 /* InitialButtonVC.swift */; };
 		92A8EBB222ECF0E1000EC835 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A8EBB122ECF0E1000EC835 /* Constants.swift */; };
-		92A8EBB322ECF0E1000EC835 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A8EBB122ECF0E1000EC835 /* Constants.swift */; };
-		92A8EBB422ECF0E1000EC835 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A8EBB122ECF0E1000EC835 /* Constants.swift */; };
 		92A8EBB722ECF6C4000EC835 /* DealershipVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A8EBB622ECF6C4000EC835 /* DealershipVC.swift */; };
 		92A8EBB822ECF6C4000EC835 /* DealershipVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A8EBB622ECF6C4000EC835 /* DealershipVC.swift */; };
 		92A8EBB922ECF6C4000EC835 /* DealershipVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A8EBB622ECF6C4000EC835 /* DealershipVC.swift */; };
@@ -230,17 +228,16 @@
 		92A8EB6F22ECEE62000EC835 /* CarsNStuff */ = {
 			isa = PBXGroup;
 			children = (
-				9239823822F017280025ACE7 /* Extensions */,
 				92A8EB7F22ECEE62000EC835 /* Info.plist */,
 				92A8EB7022ECEE62000EC835 /* AppDelegate.swift */,
-				92A8EBB122ECF0E1000EC835 /* Constants.swift */,
 				92A8EBA122ECEE78000EC835 /* Coordinators */,
+				9239823822F017280025ACE7 /* Extensions */,
 				92A8EBC522ED02CC000EC835 /* Model */,
-				92A8EBCE22ED0DB5000EC835 /* Service */,
 				92A8EBB522ECF415000EC835 /* Resources */,
+				92A8EBCE22ED0DB5000EC835 /* Service */,
 				9239822E22EFDE590025ACE7 /* TableManagers */,
-				9239823322EFEA450025ACE7 /* Views */,
 				92A8EBAA22ECF01B000EC835 /* ViewControllers */,
+				9239823322EFEA450025ACE7 /* Views */,
 			);
 			path = CarsNStuff;
 			sourceTree = "<group>";
@@ -289,6 +286,7 @@
 				92A8EB7A22ECEE62000EC835 /* Assets.xcassets */,
 				92A8EB7C22ECEE62000EC835 /* LaunchScreen.storyboard */,
 				92A8EB7422ECEE62000EC835 /* Main.storyboard */,
+				92A8EBB122ECF0E1000EC835 /* Constants.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -548,7 +546,6 @@
 				92A8EBAD22ECF036000EC835 /* Storyboarded.swift in Sources */,
 				92E24BDB22EEB97B00870E77 /* Dealership+CoreDataProperties.swift in Sources */,
 				92A8EBC822ED02F0000EC835 /* CoreDataManager.swift in Sources */,
-				92A8EBB322ECF0E1000EC835 /* Constants.swift in Sources */,
 				92AC3BFE22EF5A470062F91F /* DealershipOperation.swift in Sources */,
 				92A8EBB822ECF6C4000EC835 /* DealershipVC.swift in Sources */,
 			);
@@ -583,7 +580,6 @@
 				92A8EBAE22ECF036000EC835 /* Storyboarded.swift in Sources */,
 				92E24BDC22EEB97B00870E77 /* Dealership+CoreDataProperties.swift in Sources */,
 				92A8EBC922ED02F0000EC835 /* CoreDataManager.swift in Sources */,
-				92A8EBB422ECF0E1000EC835 /* Constants.swift in Sources */,
 				92AC3BFF22EF5A470062F91F /* DealershipOperation.swift in Sources */,
 				92A8EBB922ECF6C4000EC835 /* DealershipVC.swift in Sources */,
 			);
