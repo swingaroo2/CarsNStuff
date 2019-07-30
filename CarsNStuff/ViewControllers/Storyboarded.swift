@@ -5,6 +5,7 @@
 //  Created by Zach Lockett-Streiff on 7/27/19.
 //  Copyright © 2019 Swingaroo2. All rights reserved.
 //
+//  Inspiration for this convenience protocol courtesy of Paul Hudson (Hacking with Swift)
 
 import Foundation
 import UIKit

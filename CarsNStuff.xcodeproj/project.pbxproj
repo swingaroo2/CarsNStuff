@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9239822B22EFD9530025ACE7 /* VehiclesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9239822A22EFD9530025ACE7 /* VehiclesVC.swift */; };
+		9239822C22EFD9530025ACE7 /* VehiclesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9239822A22EFD9530025ACE7 /* VehiclesVC.swift */; };
+		9239822D22EFD9530025ACE7 /* VehiclesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9239822A22EFD9530025ACE7 /* VehiclesVC.swift */; };
+		9239823022EFDE6C0025ACE7 /* VehiclesTableManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9239822F22EFDE6C0025ACE7 /* VehiclesTableManager.swift */; };
+		9239823122EFDE6C0025ACE7 /* VehiclesTableManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9239822F22EFDE6C0025ACE7 /* VehiclesTableManager.swift */; };
+		9239823222EFDE6C0025ACE7 /* VehiclesTableManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9239822F22EFDE6C0025ACE7 /* VehiclesTableManager.swift */; };
 		92A8EB7122ECEE62000EC835 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A8EB7022ECEE62000EC835 /* AppDelegate.swift */; };
 		92A8EB7322ECEE62000EC835 /* InitialButtonVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A8EB7222ECEE62000EC835 /* InitialButtonVC.swift */; };
 		92A8EB7622ECEE62000EC835 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 92A8EB7422ECEE62000EC835 /* Main.storyboard */; };
@@ -103,6 +109,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9239822A22EFD9530025ACE7 /* VehiclesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehiclesVC.swift; sourceTree = "<group>"; };
+		9239822F22EFDE6C0025ACE7 /* VehiclesTableManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehiclesTableManager.swift; sourceTree = "<group>"; };
 		92A8EB6D22ECEE62000EC835 /* CarsNStuff.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CarsNStuff.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		92A8EB7022ECEE62000EC835 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; wrapsLines = 0; };
 		92A8EB7222ECEE62000EC835 /* InitialButtonVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialButtonVC.swift; sourceTree = "<group>"; };
@@ -166,6 +174,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9239822E22EFDE590025ACE7 /* TableManagers */ = {
+			isa = PBXGroup;
+			children = (
+				92A8EBC122ECFC23000EC835 /* DealershipTableManager.swift */,
+				9239822F22EFDE6C0025ACE7 /* VehiclesTableManager.swift */,
+			);
+			path = TableManagers;
+			sourceTree = "<group>";
+		};
 		92A8EB6422ECEE62000EC835 = {
 			isa = PBXGroup;
 			children = (
@@ -192,7 +209,7 @@
 				92A8EB7F22ECEE62000EC835 /* Info.plist */,
 				92A8EB7022ECEE62000EC835 /* AppDelegate.swift */,
 				92A8EBB122ECF0E1000EC835 /* Constants.swift */,
-				92A8EBC122ECFC23000EC835 /* DealershipTableManager.swift */,
+				9239822E22EFDE590025ACE7 /* TableManagers */,
 				92A8EB7A22ECEE62000EC835 /* Assets.xcassets */,
 				92A8EBA122ECEE78000EC835 /* Coordinators */,
 				92A8EBC522ED02CC000EC835 /* Model */,
@@ -236,6 +253,7 @@
 				92A8EB7222ECEE62000EC835 /* InitialButtonVC.swift */,
 				92A8EBAB22ECF036000EC835 /* Storyboarded.swift */,
 				92A8EBB622ECF6C4000EC835 /* DealershipVC.swift */,
+				9239822A22EFD9530025ACE7 /* VehiclesVC.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -452,6 +470,7 @@
 				92FE23EE22EE93B1008728C5 /* VehicleInfoOperation.swift in Sources */,
 				92FE23EA22EE9214008728C5 /* JSONParser.swift in Sources */,
 				92FE23E622EE63B4008728C5 /* VehicleIDsOperation.swift in Sources */,
+				9239822B22EFD9530025ACE7 /* VehiclesVC.swift in Sources */,
 				92E24BDD22EEB97B00870E77 /* Dealership+CoreDataClass.swift in Sources */,
 				92E24BE322EEB97B00870E77 /* Vehicle+CoreDataClass.swift in Sources */,
 				92A8EBA722ECEE94000EC835 /* MainCoordinator.swift in Sources */,
@@ -462,6 +481,7 @@
 				92A8EBB222ECF0E1000EC835 /* Constants.swift in Sources */,
 				92A8EB7122ECEE62000EC835 /* AppDelegate.swift in Sources */,
 				92E24BE022EEB97B00870E77 /* Vehicle+CoreDataProperties.swift in Sources */,
+				9239823022EFDE6C0025ACE7 /* VehiclesTableManager.swift in Sources */,
 				92FE23D822EE2EC2008728C5 /* VehicleIDs.swift in Sources */,
 				92A8EBAC22ECF036000EC835 /* Storyboarded.swift in Sources */,
 				92A8EBC722ED02F0000EC835 /* CoreDataManager.swift in Sources */,
@@ -482,12 +502,14 @@
 				92AC3C0222EF5B4B0062F91F /* DealershipInfo.swift in Sources */,
 				92A8EBA422ECEE8B000EC835 /* Coordinator.swift in Sources */,
 				92FE23E322EE5BA4008728C5 /* DataTaskManager.swift in Sources */,
+				9239823122EFDE6C0025ACE7 /* VehiclesTableManager.swift in Sources */,
 				92A8EBD522ED0F87000EC835 /* URLBuilder.swift in Sources */,
 				92E24BDE22EEB97B00870E77 /* Dealership+CoreDataClass.swift in Sources */,
 				92E24BE422EEB97B00870E77 /* Vehicle+CoreDataClass.swift in Sources */,
 				92FE23E722EE63B4008728C5 /* VehicleIDsOperation.swift in Sources */,
 				92A8EBA822ECEE94000EC835 /* MainCoordinator.swift in Sources */,
 				92FE23CD22ED16F4008728C5 /* Dataset.swift in Sources */,
+				9239822C22EFD9530025ACE7 /* VehiclesVC.swift in Sources */,
 				92FE23DF22EE39B7008728C5 /* DatasetOperation.swift in Sources */,
 				92FE23D922EE2EC2008728C5 /* VehicleIDs.swift in Sources */,
 				92FE23EF22EE93B1008728C5 /* VehicleInfoOperation.swift in Sources */,
@@ -513,12 +535,14 @@
 				92AC3C0322EF5B4B0062F91F /* DealershipInfo.swift in Sources */,
 				92A8EBA522ECEE8B000EC835 /* Coordinator.swift in Sources */,
 				92FE23E422EE5BA4008728C5 /* DataTaskManager.swift in Sources */,
+				9239823222EFDE6C0025ACE7 /* VehiclesTableManager.swift in Sources */,
 				92A8EBD622ED0F87000EC835 /* URLBuilder.swift in Sources */,
 				92E24BDF22EEB97B00870E77 /* Dealership+CoreDataClass.swift in Sources */,
 				92E24BE522EEB97B00870E77 /* Vehicle+CoreDataClass.swift in Sources */,
 				92FE23E822EE63B4008728C5 /* VehicleIDsOperation.swift in Sources */,
 				92A8EBA922ECEE94000EC835 /* MainCoordinator.swift in Sources */,
 				92FE23CE22ED16F4008728C5 /* Dataset.swift in Sources */,
+				9239822D22EFD9530025ACE7 /* VehiclesVC.swift in Sources */,
 				92FE23E022EE39B7008728C5 /* DatasetOperation.swift in Sources */,
 				92FE23DA22EE2EC2008728C5 /* VehicleIDs.swift in Sources */,
 				92FE23F022EE93B1008728C5 /* VehicleInfoOperation.swift in Sources */,

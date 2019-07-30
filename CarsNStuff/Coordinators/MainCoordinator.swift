@@ -5,6 +5,7 @@
 //  Created by Zach Lockett-Streiff on 7/27/19.
 //  Copyright © 2019 Swingaroo2. All rights reserved.
 //
+//  Inspiration for the Coordinator pattern courtesy of Paul Hudson (Hacking with Swift)
 
 import Foundation
 import UIKit
@@ -22,6 +23,7 @@ class MainCoordinator: Coordinator {
         let initialButtonVC = InitialButtonVC.instantiate()
         initialButtonVC.coordinator = self
         initialButtonVC.coreDataManager = coreDataManager
+        initialButtonVC.title = TitleConstants.fetchData
         navigationController.pushViewController(initialButtonVC, animated: false)
     }
 }
@@ -30,14 +32,20 @@ class MainCoordinator: Coordinator {
 extension MainCoordinator {
     func showDealerships() {
         let dealershipVC = DealershipVC.instantiate()
+        dealershipVC.title = TitleConstants.dealerships
         dealershipVC.coordinator = self
         dealershipVC.loadViewIfNeeded()
-        dealershipVC.tableManager = DealershipTableManager(for: dealershipVC.tableView, coreDataManager: coreDataManager)
+        dealershipVC.tableManager = DealershipTableManager(for: dealershipVC, coreDataManager: coreDataManager)
         navigationController.pushViewController(dealershipVC, animated: true)
     }
     
-    // TODO: Pass a ManagedObject, or relevant property
-    func showVehicleIDsForDealership() {
-        print(#function)
+    func showVehicles(for selectedDealerID: Int) {
+        let vehiclesVC = VehiclesVC.instantiate()
+        vehiclesVC.title = TitleConstants.vehicles
+        vehiclesVC.loadViewIfNeeded()
+        vehiclesVC.coordinator = self
+        vehiclesVC.tableManager = VehiclesTableManager(for: vehiclesVC, coreDataManager: coreDataManager)
+        vehiclesVC.selectedDealerID = selectedDealerID
+        navigationController.pushViewController(vehiclesVC, animated: true)
     }
 }

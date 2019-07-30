@@ -13,6 +13,11 @@ struct ModelConstants {
     static let vehicle = "Vehicle"
     static let dealership = "Dealership"
     static let name = "name"
+    static let year = "year"
+}
+
+struct Predicates {
+    static let hasDealerID = "dealerId == %@"
 }
 
 struct CellIdentifiers {
@@ -25,5 +30,7 @@ struct HttpConstants {
 }
 
 struct TitleConstants {
+    static let fetchData = "Fetch Data"
     static let dealerships = "Dealerships"
+    static let vehicles = "Vehicles"
 }

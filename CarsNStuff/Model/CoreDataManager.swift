@@ -57,6 +57,28 @@ extension CoreDataManager {
         let entitesCount = try? persistentContainer.viewContext.count(for: fetchRequest)
         return (entitesCount ?? 0) > 0
     }
+    
+    func fetchVehicles(for dealerID: Int) -> [Vehicle] {
+        let fetchRequest: NSFetchRequest<Vehicle> = Vehicle.fetchRequest()
+        fetchRequest.sortDescriptors = [NSSortDescriptor(key: ModelConstants.year, ascending: true)]
+        fetchRequest.predicate = NSPredicate(format: Predicates.hasDealerID, argumentArray: [dealerID])
+        
+        var vehicles = [Vehicle]()
+        
+        do {
+            vehicles = try fetchRequest.execute()
+        } catch {
+            print("Error: \(error.localizedDescription)")
+        }
+        
+        return vehicles
+    }
+    
+    func fetchVehicle(for dealerID: Int, at indexPath: IndexPath) -> Vehicle {
+        let fetchedVehicles = fetchVehicles(for: dealerID)
+        let chosenVehicle = fetchedVehicles[indexPath.row]
+        return chosenVehicle
+    }
 }
 
 // MARK: - Save/Delete/Update

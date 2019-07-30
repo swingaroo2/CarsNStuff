@@ -12,13 +12,12 @@ import CoreData
 
 class DealershipTableManager: NSObject {
     
-    var dealerships = [String]()
-    var coreDataManager: CoreDataManager!
-    var tableView: UITableView
+    private let coreDataManager: CoreDataManager!
+    private let dealershipVC: DealershipVC
     
-    init(for tableView: UITableView, coreDataManager: CoreDataManager) {
+    init(for dealershipVC: DealershipVC, coreDataManager: CoreDataManager) {
         self.coreDataManager = coreDataManager
-        self.tableView = tableView
+        self.dealershipVC = dealershipVC
         super.init()
         self.coreDataManager.dealershipsDelegate = self
     }
@@ -47,26 +46,31 @@ extension DealershipTableManager: UITableViewDataSource {
 
 extension DealershipTableManager: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("Back to the coordinator")
+        let selectedCell = tableView.cellForRow(at: indexPath)
+        selectedCell?.isSelected = false
+        let selectedDealership = coreDataManager.dealershipFRC.object(at: indexPath)
+        let selectedDealerID = Int(selectedDealership.dealerId)
+        dealershipVC.coordinator.showVehicles(for: selectedDealerID)
     }
 }
 
+// TODO: Might not even need this.
 extension DealershipTableManager: NSFetchedResultsControllerDelegate {
     func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: Any, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
         switch (type) {
         case .insert:
             if let indexPath = newIndexPath {
-                tableView.insertRows(at: [indexPath], with: .fade)
+                dealershipVC.tableView.insertRows(at: [indexPath], with: .fade)
             }
             break;
         case .delete:
             if let indexPath = indexPath {
-                tableView.deleteRows(at: [indexPath], with: .fade)
+                dealershipVC.tableView.deleteRows(at: [indexPath], with: .fade)
             }
             break;
         case .update:
             if let indexPath = indexPath {
-                tableView.reloadRows(at: [indexPath], with: .fade)
+                dealershipVC.tableView.reloadRows(at: [indexPath], with: .fade)
             }
             break;
         default:
@@ -75,10 +79,10 @@ extension DealershipTableManager: NSFetchedResultsControllerDelegate {
     }
     
     func controllerWillChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
-        tableView.beginUpdates()
+        dealershipVC.tableView.beginUpdates()
     }
     
     func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
-        tableView.endUpdates()
+        dealershipVC.tableView.endUpdates()
     }
 }
