@@ -34,10 +34,14 @@ extension DealershipTableManager: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         // Placeholder
         let cell = tableView.dequeueReusableCell(withIdentifier: CellIdentifiers.generic, for: indexPath)
-        let fetchedDealerships = coreDataManager.dealershipFRC.object(at: indexPath)
-        cell.textLabel?.text = fetchedDealerships.name
-        cell.detailTextLabel?.text = "\(fetchedDealerships.dealerId)"
+        let fetchedDealership = coreDataManager.dealershipFRC.object(at: indexPath)
+        configure(cell, with: fetchedDealership)
         return cell
+    }
+    
+    private func configure(_ cell: UITableViewCell, with dealership: Dealership) {
+        cell.textLabel?.text = dealership.name
+        cell.detailTextLabel?.text = "ID: \(dealership.dealerId)"
     }
 }
 
