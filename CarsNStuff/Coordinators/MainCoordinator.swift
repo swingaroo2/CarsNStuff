@@ -31,7 +31,8 @@ extension MainCoordinator {
     func showDealerships() {
         let dealershipVC = DealershipVC.instantiate()
         dealershipVC.coordinator = self
-        dealershipVC.tableManager = DealershipTableManager(coreDataManager: coreDataManager)
+        dealershipVC.loadViewIfNeeded()
+        dealershipVC.tableManager = DealershipTableManager(for: dealershipVC.tableView, coreDataManager: coreDataManager)
         navigationController.pushViewController(dealershipVC, animated: true)
     }
     

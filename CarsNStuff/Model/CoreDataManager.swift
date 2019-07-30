@@ -11,6 +11,7 @@ import CoreData
 
 class CoreDataManager {
 
+    weak var dealershipsDelegate: NSFetchedResultsControllerDelegate?
     var modelName: String
     
     lazy var persistentContainer: NSPersistentContainer = {
@@ -30,13 +31,26 @@ class CoreDataManager {
         }
         return container
     }()
+    
+    lazy var dealershipFRC: NSFetchedResultsController<Dealership> = {
+        let fetchRequest: NSFetchRequest<Dealership> = Dealership.fetchRequest()
+        fetchRequest.sortDescriptors = [NSSortDescriptor(key: ModelConstants.name, ascending: false)]
+        let frc = NSFetchedResultsController(fetchRequest: fetchRequest,
+                                                                  managedObjectContext: persistentContainer.viewContext,
+                                                                  sectionNameKeyPath: nil,
+                                                                  cacheName: nil)
+        frc.delegate = self.dealershipsDelegate
+        try? frc.performFetch()
+        
+        return frc
+    }()
 
     init(modelName: String) {
         self.modelName = modelName
     }
 }
 
-// MARK: Exists checking
+// MARK: Fetching
 extension CoreDataManager {
     func hasEntities(named entityName: String) -> Bool {
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: entityName)

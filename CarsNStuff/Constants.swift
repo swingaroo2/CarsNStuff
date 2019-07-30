@@ -12,6 +12,7 @@ struct ModelConstants {
     static let modelName = "CarsNStuff"
     static let vehicle = "Vehicle"
     static let dealership = "Dealership"
+    static let name = "name"
 }
 
 struct CellIdentifiers {
