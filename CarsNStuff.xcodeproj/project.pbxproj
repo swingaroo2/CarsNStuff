@@ -16,6 +16,9 @@
 		9239823522EFEA730025ACE7 /* VehiclesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9239823422EFEA730025ACE7 /* VehiclesTableViewCell.swift */; };
 		9239823622EFEA730025ACE7 /* VehiclesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9239823422EFEA730025ACE7 /* VehiclesTableViewCell.swift */; };
 		9239823722EFEA730025ACE7 /* VehiclesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9239823422EFEA730025ACE7 /* VehiclesTableViewCell.swift */; };
+		9239823A22F017470025ACE7 /* UIButton+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9239823922F017470025ACE7 /* UIButton+Extensions.swift */; };
+		9239823B22F017470025ACE7 /* UIButton+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9239823922F017470025ACE7 /* UIButton+Extensions.swift */; };
+		9239823C22F017470025ACE7 /* UIButton+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9239823922F017470025ACE7 /* UIButton+Extensions.swift */; };
 		92A8EB7122ECEE62000EC835 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A8EB7022ECEE62000EC835 /* AppDelegate.swift */; };
 		92A8EB7322ECEE62000EC835 /* InitialButtonVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A8EB7222ECEE62000EC835 /* InitialButtonVC.swift */; };
 		92A8EB7622ECEE62000EC835 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 92A8EB7422ECEE62000EC835 /* Main.storyboard */; };
@@ -115,6 +118,7 @@
 		9239822A22EFD9530025ACE7 /* VehiclesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehiclesVC.swift; sourceTree = "<group>"; };
 		9239822F22EFDE6C0025ACE7 /* VehiclesTableManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehiclesTableManager.swift; sourceTree = "<group>"; wrapsLines = 0; };
 		9239823422EFEA730025ACE7 /* VehiclesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehiclesTableViewCell.swift; sourceTree = "<group>"; };
+		9239823922F017470025ACE7 /* UIButton+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Extensions.swift"; sourceTree = "<group>"; };
 		92A8EB6D22ECEE62000EC835 /* CarsNStuff.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CarsNStuff.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		92A8EB7022ECEE62000EC835 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; wrapsLines = 0; };
 		92A8EB7222ECEE62000EC835 /* InitialButtonVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialButtonVC.swift; sourceTree = "<group>"; };
@@ -195,6 +199,14 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		9239823822F017280025ACE7 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				9239823922F017470025ACE7 /* UIButton+Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		92A8EB6422ECEE62000EC835 = {
 			isa = PBXGroup;
 			children = (
@@ -218,6 +230,7 @@
 		92A8EB6F22ECEE62000EC835 /* CarsNStuff */ = {
 			isa = PBXGroup;
 			children = (
+				9239823822F017280025ACE7 /* Extensions */,
 				92A8EB7F22ECEE62000EC835 /* Info.plist */,
 				92A8EB7022ECEE62000EC835 /* AppDelegate.swift */,
 				92A8EBB122ECF0E1000EC835 /* Constants.swift */,
@@ -477,6 +490,7 @@
 				9239823522EFEA730025ACE7 /* VehiclesTableViewCell.swift in Sources */,
 				92A8EBC222ECFC23000EC835 /* DealershipTableManager.swift in Sources */,
 				92AC3C0122EF5B4B0062F91F /* DealershipInfo.swift in Sources */,
+				9239823A22F017470025ACE7 /* UIButton+Extensions.swift in Sources */,
 				92A8EBA322ECEE8B000EC835 /* Coordinator.swift in Sources */,
 				92E24BDA22EEB97B00870E77 /* Dealership+CoreDataProperties.swift in Sources */,
 				92A8EB7322ECEE62000EC835 /* InitialButtonVC.swift in Sources */,
@@ -510,6 +524,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				92FE23EB22EE9214008728C5 /* JSONParser.swift in Sources */,
+				9239823B22F017470025ACE7 /* UIButton+Extensions.swift in Sources */,
 				92A8EBAF22ECF091000EC835 /* InitialButtonVC.swift in Sources */,
 				92E24BE122EEB97B00870E77 /* Vehicle+CoreDataProperties.swift in Sources */,
 				92A8EBC322ECFC23000EC835 /* DealershipTableManager.swift in Sources */,
@@ -544,6 +559,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				92FE23EC22EE9214008728C5 /* JSONParser.swift in Sources */,
+				9239823C22F017470025ACE7 /* UIButton+Extensions.swift in Sources */,
 				92A8EBB022ECF092000EC835 /* InitialButtonVC.swift in Sources */,
 				92E24BE222EEB97B00870E77 /* Vehicle+CoreDataProperties.swift in Sources */,
 				92A8EBC422ECFC23000EC835 /* DealershipTableManager.swift in Sources */,
