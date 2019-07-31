@@ -11,5 +11,6 @@ This project demonstrates use of the following:
 - SOLID principles
 - Core Data
 - Custom app icon and launch screen
-- A punny sense of humor
 - JSON encoding and decoding
+- No third-party dependencies
+- A punny sense of humor
