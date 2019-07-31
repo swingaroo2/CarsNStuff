@@ -15,7 +15,6 @@
 		9224972922F0F3B3002885CA /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9224972722F0F3B3002885CA /* UIView+Extension.swift */; };
 		9224972A22F0F3B3002885CA /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9224972722F0F3B3002885CA /* UIView+Extension.swift */; };
 		9224972C22F0FC5D002885CA /* ModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9224972B22F0FC5D002885CA /* ModelTests.swift */; };
-		9224972E22F10110002885CA /* OperationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9224972D22F10110002885CA /* OperationTests.swift */; };
 		9224973022F10220002885CA /* HttpClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9224972F22F10220002885CA /* HttpClient.swift */; };
 		9224973122F10220002885CA /* HttpClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9224972F22F10220002885CA /* HttpClient.swift */; };
 		9224973222F10220002885CA /* HttpClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9224972F22F10220002885CA /* HttpClient.swift */; };
@@ -25,6 +24,9 @@
 		9224973822F12415002885CA /* NetworingMocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9224973722F12415002885CA /* NetworingMocks.swift */; };
 		9224973922F12415002885CA /* NetworingMocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9224973722F12415002885CA /* NetworingMocks.swift */; };
 		9224973A22F12415002885CA /* NetworingMocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9224973722F12415002885CA /* NetworingMocks.swift */; };
+		9224973C22F14542002885CA /* HttpClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9224973B22F14542002885CA /* HttpClientTests.swift */; };
+		9224974022F152B5002885CA /* URLBuilderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9224973F22F152B5002885CA /* URLBuilderTests.swift */; };
+		9224974222F15FB5002885CA /* JSONParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9224974122F15FB5002885CA /* JSONParserTests.swift */; };
 		9239822B22EFD9530025ACE7 /* VehiclesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9239822A22EFD9530025ACE7 /* VehiclesVC.swift */; };
 		9239822C22EFD9530025ACE7 /* VehiclesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9239822A22EFD9530025ACE7 /* VehiclesVC.swift */; };
 		9239822D22EFD9530025ACE7 /* VehiclesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9239822A22EFD9530025ACE7 /* VehiclesVC.swift */; };
@@ -129,10 +131,12 @@
 /* Begin PBXFileReference section */
 		9224972722F0F3B3002885CA /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; wrapsLines = 0; };
 		9224972B22F0FC5D002885CA /* ModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelTests.swift; sourceTree = "<group>"; wrapsLines = 0; };
-		9224972D22F10110002885CA /* OperationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationTests.swift; sourceTree = "<group>"; };
 		9224972F22F10220002885CA /* HttpClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpClient.swift; sourceTree = "<group>"; wrapsLines = 0; };
 		9224973322F123E4002885CA /* NetworkingProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingProtocols.swift; sourceTree = "<group>"; };
 		9224973722F12415002885CA /* NetworingMocks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworingMocks.swift; sourceTree = "<group>"; };
+		9224973B22F14542002885CA /* HttpClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpClientTests.swift; sourceTree = "<group>"; };
+		9224973F22F152B5002885CA /* URLBuilderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLBuilderTests.swift; sourceTree = "<group>"; wrapsLines = 0; };
+		9224974122F15FB5002885CA /* JSONParserTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONParserTests.swift; sourceTree = "<group>"; wrapsLines = 0; };
 		9239822A22EFD9530025ACE7 /* VehiclesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehiclesVC.swift; sourceTree = "<group>"; };
 		9239822F22EFDE6C0025ACE7 /* VehiclesTableManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehiclesTableManager.swift; sourceTree = "<group>"; wrapsLines = 0; };
 		9239823422EFEA730025ACE7 /* VehiclesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehiclesTableViewCell.swift; sourceTree = "<group>"; };
@@ -263,7 +267,9 @@
 		92A8EB8722ECEE63000EC835 /* CarsNStuffTests */ = {
 			isa = PBXGroup;
 			children = (
-				9224972D22F10110002885CA /* OperationTests.swift */,
+				9224974122F15FB5002885CA /* JSONParserTests.swift */,
+				9224973F22F152B5002885CA /* URLBuilderTests.swift */,
+				9224973B22F14542002885CA /* HttpClientTests.swift */,
 				9224972B22F0FC5D002885CA /* ModelTests.swift */,
 				92A8EB8A22ECEE63000EC835 /* Info.plist */,
 			);
@@ -550,9 +556,10 @@
 				9224973522F123E4002885CA /* NetworkingProtocols.swift in Sources */,
 				9224972922F0F3B3002885CA /* UIView+Extension.swift in Sources */,
 				92A8EBAF22ECF091000EC835 /* InitialButtonVC.swift in Sources */,
+				9224973C22F14542002885CA /* HttpClientTests.swift in Sources */,
 				9224972C22F0FC5D002885CA /* ModelTests.swift in Sources */,
 				92E24BE122EEB97B00870E77 /* Vehicle+CoreDataProperties.swift in Sources */,
-				9224972E22F10110002885CA /* OperationTests.swift in Sources */,
+				9224974222F15FB5002885CA /* JSONParserTests.swift in Sources */,
 				92A8EBC322ECFC23000EC835 /* DealershipTableManager.swift in Sources */,
 				9224972422F0E97E002885CA /* AppDelegate.swift in Sources */,
 				92AC3C0222EF5B4B0062F91F /* DealershipInfo.swift in Sources */,
@@ -569,6 +576,7 @@
 				92FE23E722EE63B4008728C5 /* VehicleIDsOperation.swift in Sources */,
 				92A8EBA822ECEE94000EC835 /* MainCoordinator.swift in Sources */,
 				92FE23CD22ED16F4008728C5 /* Dataset.swift in Sources */,
+				9224974022F152B5002885CA /* URLBuilderTests.swift in Sources */,
 				9239822C22EFD9530025ACE7 /* VehiclesVC.swift in Sources */,
 				92FE23DF22EE39B7008728C5 /* DatasetOperation.swift in Sources */,
 				92FE23D922EE2EC2008728C5 /* VehicleIDs.swift in Sources */,

@@ -121,6 +121,9 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <accessibility key="accessibilityConfiguration">
+                                            <bool key="isElement" value="YES"/>
+                                        </accessibility>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -194,6 +197,9 @@
                                                 <constraint firstItem="H2L-hp-l1v" firstAttribute="trailing" secondItem="zY3-qK-vM1" secondAttribute="trailingMargin" id="zIc-Er-alJ"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <accessibility key="accessibilityConfiguration">
+                                            <bool key="isElement" value="YES"/>
+                                        </accessibility>
                                         <connections>
                                             <outlet property="dealershipIDLabel" destination="Brb-yg-baI" id="786-YJ-saN"/>
                                             <outlet property="vehicleIDLabel" destination="hXs-Sh-txU" id="4mV-nG-cu6"/>

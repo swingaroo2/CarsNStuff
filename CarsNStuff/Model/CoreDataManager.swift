@@ -58,8 +58,8 @@ class CoreDataManager {
 extension CoreDataManager {
     func hasEntities(named entityName: String) -> Bool {
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: entityName)
-        let entitesCount = try? persistentContainer.viewContext.count(for: fetchRequest)
-        return (entitesCount ?? 0) > 0
+        let entitiesCount = try? persistentContainer.viewContext.count(for: fetchRequest)
+        return (entitiesCount ?? 0) > 0
     }
     
     func fetchVehicles(for dealerID: Int) -> [Vehicle] {

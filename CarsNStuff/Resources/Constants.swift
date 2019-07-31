@@ -20,6 +20,7 @@ struct ButtonTitles {
     static let fetchButtonNormal = "Fetch Dealership and Vehicle Data"
     static let fetchButtonNoInternetConnection = "No Internet Connection"
     static let fetchButtonSelected = "Fetching..."
+    static let navButtonStoredData = "Stored Data"
 }
 
 struct CellIdentifiers {

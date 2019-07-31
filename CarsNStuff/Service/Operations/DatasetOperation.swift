@@ -32,7 +32,6 @@ class DatasetOperation: Operation {
             print("Failed to get URL for dataset ID task")
             return
         }
-        
         let httpClient = HttpClient(urlSession)
         httpClient.get(url) { data, error in
             

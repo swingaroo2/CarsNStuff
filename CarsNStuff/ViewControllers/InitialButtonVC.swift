@@ -75,7 +75,7 @@ private extension InitialButtonVC {
     }
     
     func addDealershipsNavButton() {
-        let navButton = UIBarButtonItem(title: TitleConstants.dealerships, style: .plain, target: self, action: #selector(dealershipsNavButtonPressed))
+        let navButton = UIBarButtonItem(title: ButtonTitles.navButtonStoredData, style: .plain, target: self, action: #selector(dealershipsNavButtonPressed))
         navButton.isEnabled = coreDataManager.hasEntities(named: ModelConstants.dealership)
         navigationItem.rightBarButtonItem = navButton
     }

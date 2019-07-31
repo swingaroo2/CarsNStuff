@@ -19,7 +19,7 @@ class JSONParser {
         let decoder = JSONDecoder()
         guard let decoded = try? decoder.decode(type, from: data) else {
             
-            print("Failed to deconde JSON")
+            print("Failed to decode JSON")
             return nil
         }
         return decoded
