@@ -17,3 +17,14 @@ extension UIView {
         }
     }
 }
+
+extension UIButton {
+    func handle(_ enabledStatus: Bool, backgroundColor: UIColor, titleColor: UIColor, title: String, duration: TimeInterval = 0.2) {
+        UIView.animate(withDuration: duration) { [unowned self] in
+            self.isEnabled = enabledStatus
+            self.backgroundColor = backgroundColor
+            self.setTitleColor(titleColor, for: .normal)
+            self.setTitle(title, for: .normal)
+        }
+    }
+}

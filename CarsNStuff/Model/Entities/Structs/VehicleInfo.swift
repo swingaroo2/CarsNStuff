@@ -15,6 +15,8 @@ struct VehicleInfo: Codable, Hashable {
     var model: String
     var dealerId: Int64
     
+    // NOTE: From what I've seen of the dataset, I should not expect any duplicate vehicles, in the same way I expect duplicate Dealerships. Therefore, this code is more of a hypothetical just-in-case.
+    
     func hash(into hasher: inout Hasher) {
         hasher.combine(year)
         hasher.combine(make)

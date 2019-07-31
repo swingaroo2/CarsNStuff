@@ -33,8 +33,8 @@ class DatasetOperation: Operation {
             return
         }
         
-        let datasetTask = urlSession.dataTask(with: url) { [weak self] data, response, error in
-            guard let self = self else { return }
+        let httpClient = HttpClient(urlSession)
+        httpClient.get(url) { data, error in
             
             if let error = error {
                 print("Error: \(error.localizedDescription)")
@@ -44,7 +44,5 @@ class DatasetOperation: Operation {
             self.dataset = JSONParser.decode(jsonData: data, into: Dataset.self)
             self.completionHandler(self.dataset)
         }
-        
-        datasetTask.resume()
     }
 }

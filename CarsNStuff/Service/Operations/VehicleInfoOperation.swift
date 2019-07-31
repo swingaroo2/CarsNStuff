@@ -35,8 +35,8 @@ class VehicleInfoOperation: Operation {
         guard let datasetID = datasetID, let vehicleID = vehicleID else { return }
         guard let url = urlBuilder.getVehicleInfoURL(datasetID, vehicleID) else { return }
         
-        let vehicleInfoTask = urlSession.dataTask(with: url) { [weak self] data, response, error in
-            guard let self = self else { return }
+        let httpClient = HttpClient(urlSession)
+        httpClient.get(url) { data, error in
             
             if let error = error {
                 print("Error: \(error.localizedDescription)")
@@ -48,7 +48,5 @@ class VehicleInfoOperation: Operation {
             guard let vehicleInfo = self.vehicleInfo else { return }
             self.completionHandler(vehicleInfo)
         }
-        
-        vehicleInfoTask.resume()
     }
 }

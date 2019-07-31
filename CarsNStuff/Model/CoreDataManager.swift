@@ -17,12 +17,6 @@ class CoreDataManager {
     lazy var persistentContainer: NSPersistentContainer = {
         let container = NSPersistentContainer(name: self.modelName)
         
-        if let persistentStoreURL = container.persistentStoreDescriptions.first?.url {
-            let description = NSPersistentStoreDescription(url: persistentStoreURL)
-            description.shouldAddStoreAsynchronously = true
-            container.persistentStoreDescriptions = [description]
-        }
-        
         container.loadPersistentStores { (storeDescription, error) in
             if let error = error as NSError? {
                 fatalError("Unresolved error \(error), \(error.userInfo)")
@@ -101,8 +95,6 @@ extension CoreDataManager {
         deleteAllRecords(entityName: ModelConstants.vehicle)
         deleteAllRecords(entityName: ModelConstants.dealership)
     }
-    
-
     
     func update(with vehicles: Set<VehicleInfo>,_ dealerships: Set<DealershipInfo>,_ completion: @escaping VoidCompletionHandler) {
         persistentContainer.performBackgroundTask { [weak self] context in

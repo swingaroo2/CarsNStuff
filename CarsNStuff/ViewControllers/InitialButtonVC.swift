@@ -53,10 +53,7 @@ private extension InitialButtonVC {
         let backgroundColor = connectionStatus ? Colors.fetchButton : .lightGray
         let titleColor: UIColor = connectionStatus ? .darkText : .lightText
         let title = connectionStatus ? ButtonTitles.fetchButtonNormal : ButtonTitles.fetchButtonNoInternetConnection
-        self.fetchButton.isEnabled = connectionStatus
-        self.fetchButton.backgroundColor = backgroundColor
-        self.fetchButton.setTitleColor(titleColor, for: .normal)
-        self.fetchButton.setTitle(title, for: .normal)
+        self.fetchButton.handle(connectionStatus, backgroundColor: backgroundColor, titleColor: titleColor, title: title)
     }
     
     func monitorNetworkStatus() {
