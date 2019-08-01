@@ -21,7 +21,7 @@ extension AppDelegate: UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         let navController = UINavigationController()
         initializeCoordinator(with: navController, coreDataManager: coreDataManager)
-        initializeWindow(with: navController)
+        window = UIWindow.createNewWindow(with: navController)
         return true
     }
     
@@ -30,16 +30,10 @@ extension AppDelegate: UIApplicationDelegate {
     }
 }
 
-extension AppDelegate {
-    private func initializeCoordinator(with navController: UINavigationController, coreDataManager: CoreDataManager) {
+private extension AppDelegate {
+    func initializeCoordinator(with navController: UINavigationController, coreDataManager: CoreDataManager) {
         coordinator = MainCoordinator(navigationController: navController, coreDataManager: coreDataManager)
         coordinator?.start()
-    }
-    
-    private func initializeWindow(with navController: UINavigationController) {
-        window = UIWindow(frame: UIScreen.main.bounds)
-        window?.rootViewController = navController
-        window?.makeKeyAndVisible()
     }
 }
 

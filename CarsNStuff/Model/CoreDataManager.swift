@@ -12,7 +12,7 @@ import CoreData
 class CoreDataManager {
     typealias VoidCompletionHandler = () -> ()
     weak var dealershipsDelegate: NSFetchedResultsControllerDelegate?
-    var modelName: String
+    private let modelName: String
     
     lazy var persistentContainer: NSPersistentContainer = {
         let container = NSPersistentContainer(name: self.modelName)

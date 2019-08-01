@@ -12,7 +12,7 @@ import UIKit
 
 class MainCoordinator: Coordinator {
     var navigationController: UINavigationController
-    var coreDataManager: CoreDataManager
+    private let coreDataManager: CoreDataManager
     
     init(navigationController: UINavigationController, coreDataManager: CoreDataManager) {
         self.navigationController = navigationController
